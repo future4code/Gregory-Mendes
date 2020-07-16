@@ -1,0 +1,16 @@
+h2 {
+    text-align: center;
+    color: #026680;
+    margin-top: 50px;
+    font-size: 30px;
+}
+
+#tabela-estoque {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 75px;
+}
+
+table {   
+    width: 100%;
+}

@@ -1,0 +1,49 @@
+* {
+    margin: 0;   
+}
+
+body {
+    background-color: #00cbff;
+}
+
+#cabecalho {
+    text-align: center;
+    color: #026680;
+    font-size: 25px;
+    margin: 100px 0px 45px;
+}
+
+#navegacao {
+    background-color: #9fecff;
+    text-align: center;
+    margin: 15px 0px;
+    padding: 40px 0px;
+}
+
+div > a{
+    font-size: 25px;
+    color: #026680;
+    margin: 0px 60px;
+    text-decoration: none;
+}
+
+a:hover{
+    background-color: #00cbff;
+}
+
+#info-adicional {
+    text-align: center;
+    color: #026680;
+    font-size: 25px;
+    margin: 350px 0px 0px 40px;
+}
+
+#rodape {
+    text-align: center;
+    font-size: 30px;
+    margin-top: 50px;
+}
+
+#rodape img {
+    width: 2%;
+}
