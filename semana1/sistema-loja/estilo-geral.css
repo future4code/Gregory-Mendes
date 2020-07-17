@@ -1,0 +1,63 @@
+* {
+    margin: 0;   
+}
+
+body {
+    background-color: #00cbff;
+}
+
+h2 {
+    text-align: center;
+    color: #026680;
+    margin-top: 50px;
+    font-size: 35px;
+}
+
+#cabecalho {
+    text-align: center;
+    color: #026680;
+    font-size: 25px;
+    margin: 100px 0px 45px;
+}
+
+#navegacao {
+    background-color: #9fecff;
+    text-align: center;
+    margin: 15px 0px;
+    padding: 40px 0px;
+}
+
+div > a{
+    font-size: 25px;
+    color: #026680;
+    margin: 0px 60px;
+    text-decoration: none;
+}
+
+a:hover{
+    background-color: #00cbff;
+}
+
+#fotos-pantufas > img {
+    width: 30%;
+    margin: 30px 30px 0px;
+}
+
+#info-adicional {
+    text-align: center;
+    color: #026680;
+    font-size: 25px;
+    margin: 50px 0px 0px 40px;
+}
+
+#rodape {
+    text-align: center;
+    color: #013c4b;
+    font-size: 20px;
+    margin-top: 50px;
+}
+
+#rodape img {
+    width: 2%;
+    margin-top: 10px;
+}

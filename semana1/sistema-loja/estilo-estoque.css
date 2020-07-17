@@ -1,0 +1,19 @@
+#tabela-estoque {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 75px;
+}
+
+table {   
+    width: 100%;
+}
+
+#titulos-tabela {
+    font-size: 25px;
+    color: #013c4b;
+}
+
+img {
+    width: 25%;
+    margin: 15px 0px; 
+}
