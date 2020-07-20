@@ -1,0 +1,206 @@
+* {
+    margin: 0px;
+    font-family: "Roboto";
+}
+
+body {
+    background-color: #008080;
+    color: #4b4747;
+}
+
+#navegacao {
+    background-color: #fac3c3;
+    text-align: center;
+    font-size: 30px;
+    border-bottom: 10px solid #4b4747;
+    width: 100%;
+    padding: 30px 0px;
+}
+
+#navegacao > a {
+    text-decoration: none;
+    color: #4b4747;
+    margin: 0px 100px;   
+}
+
+.conteudo {
+    margin: 80px 70px 80px 200px;
+}
+
+#sobre-mim {
+    text-align: center;
+    padding: 50px 150px;
+}
+
+#sobre-mim > p  {
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: 50px; 
+}
+
+#sobre-mim > img {
+    width: 300px;
+    height: 300px;
+    border: 10px solid #4b4747;
+}
+
+#habilidades, #educacao, #empregos, #projetos {
+    background-color: #fac3c3;
+    border-bottom: 10px solid #4b4747;
+    border-left: 15px solid #4b4747;
+    border-radius: 10px;
+    font-size: 20px;
+    width: 40%;
+    padding: 15px;
+    margin-top: 30px;
+}
+
+#tela-responsiva, #pantufaria, #animacao-unity {
+    background-color: #fac3c3;
+    border-bottom: 10px solid #4b4747;
+    border-radius: 10px;
+    font-size: 20px;
+    width: 40%;
+    padding: 15px;
+    margin-top: 30px;
+}
+
+.titulo-centro {
+    text-align: center;
+}
+
+.lista {
+    padding: 15px;
+}
+
+li{
+    font-weight: bold;
+    list-style: none;
+}
+
+.conteudo p {
+    margin: 10px 0px;
+}
+
+.conteudo a {
+    text-decoration: none;
+    color: #4b4747;
+}
+
+#educacao {
+    width: 30%;
+    margin-left: 900px;
+}
+
+#empregos {
+    width: 35%;
+    margin-left: 150px;
+}
+
+#projetos {
+    width: 20%;
+    margin-left: 1000px;
+}
+
+#projetos  li {
+    text-align: center;
+    margin: 25px 0px;
+}
+
+#contatos {
+    background-color: #fac3c3;
+    text-align: center;
+    border-top: 10px solid #4b4747;
+    height: 200px;
+    margin-top: 100px;
+    padding: 50px;
+}
+
+#contatos img {
+    width: 5%;
+    margin-top: 50px;
+}
+
+#tela-responsiva img, #pantufaria img,
+#animacao-unity img {
+    border: 2px solid #4b4747;
+    width: 70%;
+    margin: 15px 100px;
+}
+
+#pantufaria {
+    margin-left: 900px;
+}
+
+#animacao-unity {
+    margin-left: 50px;
+}
+
+#form-mensagem {
+    text-align: left;
+    padding: 50px 200px;
+    margin-right: 200px;
+}
+
+#form-mensagem > p {
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+}
+
+#form-mensagem > form {
+    font-weight: bold;
+    margin-top: 100px;
+    padding: 0px 50px;
+}
+
+input {
+    width: 300px;
+    border-radius: 4px;
+}
+
+form {
+    text-align: center;
+}
+
+#mensagem-usuario {
+    text-align: center;
+    margin-top: 50px;
+    
+}
+
+#mensagem-usuario input {
+    height: 200px;
+    width: 500px;
+}
+
+.conteudo > p {
+    margin-top: 70px;
+    font-size: 20px;
+}
+
+.tecnologias {
+    background-color: #fac3c3;
+    border-bottom: 10px solid #4b4747;
+    border-left: 15px solid #4b4747;
+    border-radius: 10px;
+    font-size: 20px;
+    width: 20%;
+    padding: 15px;
+    margin-top: 30px;
+}
+
+.titulos-projetos {
+    font-size: 30px;
+}
+
+.prints {  
+    margin-top: 100px;
+}
+
+.prints img {
+    margin-top: 30px;
+    width: 30%;
+    border: 5px solid #4b4747;
+    border-radius: 10px;
+}
