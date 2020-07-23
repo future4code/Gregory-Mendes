@@ -1,0 +1,94 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+div {
+    border: 1px solid black;
+}
+
+#main-container {
+    display: flex;
+    flex-flow: column wrap;
+    border: none;
+}
+
+#first-block {
+    background-color: red;
+    width: 100%;
+    height: 10vh;
+}
+
+.blue-block {
+    background-color: blue;
+}
+
+.yellow-block {
+    background-color: yellow;
+}
+
+.green-block {
+    background-color: green;
+}
+
+.black-block {
+    background-color: black;
+    color: white;
+}
+
+.white-block {
+    background-color: white;
+}
+
+.blue-block, .yellow-block, .green-block, .black-block, .white-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 15px;
+    height: 10vh;
+}
+
+@media screen and (min-width: 401px) and (max-width: 850px) {
+    #main-container {
+        flex-flow: row wrap;
+    }
+
+    .blue-block, .yellow-block, .green-block, .black-block, .white-block {
+        margin: 15px auto 15px auto;
+    }
+
+    .blue-block, .yellow-block, .white-block {
+        height: 10vh;
+        width: 45%;
+    }
+
+    .green-block, #align-self-box {
+        width: 95%;
+    }
+    .black-block {
+        width: 45.5%;
+        height: 250px;
+    }
+}
+
+@media screen and (min-width: 851px) {
+    #main-container {
+        flex-flow: row wrap;
+    }
+
+    .blue-block, .yellow-block, .green-block, .black-block, .white-block {
+        margin: 15px auto 15px auto;
+    }
+
+    .blue-block, .yellow-block, .green-block, .white-block {
+        height: 10vh;
+        width: 25%;
+    }
+
+    .black-block {
+        width: 41.5%;
+        height: 250px;
+    }
+}
