@@ -124,7 +124,7 @@ if (genero === "fantasia" && preco <= 15){
 
 
 // Desafio 2
-
+/*
 const nome = prompt("Qual o seu nome?");
 let tipoJogo = prompt("Qual o tipo do jogo? (IN = Internacional, DO = Doméstico)").toUpperCase();
 let etapaJogo = prompt("Qual a etapa do jogo?\n(SF = Semi-final, DT = Decisão de terceiro lugar, " +
@@ -286,3 +286,4 @@ console.log("---Dados da compra---\nNome do Cliente: " + nome + "\nTipo do jogo:
             "\nEtapa do Jogo: " + etapaJogo + "\nCategoria: " + categoria + "\nQuantidade de Ingressos: " +
             quantidadeIngressos + "\n---Valores---\nValor do ingresso: R$ " + precoDoIngresso +
             "\nValor total: R$ " + precoTotal);
+*/
