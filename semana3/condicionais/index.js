@@ -134,143 +134,152 @@ const quantidadeIngressos = Number(prompt("Qual a quantidade de ingressos?"));
 let precoDoIngresso;
 let precoTotal;
 
-if (tipoJogo === "IN"){
+if (tipoJogo === "IN" && etapaJogo === "SF" && categoria === "1"){
     tipoJogo = "Internacional";
-
-} else if (tipoJogo === "DO") {
-    tipoJogo = "Nacional";
-}
-
-if(etapaJogo === "SF"){
     etapaJogo = "Semi-final";
+    precoDoIngresso = 1320 / 4.10;
+    precoTotal = quantidadeIngressos * precoDoIngresso;
 
-} else if (etapaJogo === "DT"){
+} else if (tipoJogo === "IN" && etapaJogo === "SF" && categoria === "2") {
+    tipoJogo = "Internacional";
+    etapaJogo = "Semi-final";
+    precoDoIngresso = 880 / 4.10;
+    precoTotal = quantidadeIngressos * precoDoIngresso;
+
+} else if (tipoJogo === "IN" && etapaJogo === "SF" && categoria === "3") {
+    tipoJogo = "Internacional";
+    etapaJogo = "Semi-final";
+    precoDoIngresso = 550 / 4.10;
+    precoTotal = quantidadeIngressos * precoDoIngresso;
+
+} else if (tipoJogo === "IN" && etapaJogo === "SF" && categoria === "4") {
+    tipoJogo = "Internacional";
+    etapaJogo = "Semi-final";
+    precoDoIngresso = 220 / 4.10;
+    precoTotal = quantidadeIngressos * precoDoIngresso;
+
+} else if (tipoJogo === "IN" && etapaJogo === "DT" && categoria === "1") {
+    tipoJogo = "Internacional";
     etapaJogo = "Decisão de terceiro lugar";
+    precoDoIngresso = 600 / 4.10;
+    precoTotal = quantidadeIngressos * precoDoIngresso;
+
+} else if (tipoJogo === "IN" && etapaJogo === "DT" && categoria === "2") {
+    tipoJogo = "Internacional";
+    etapaJogo = "Decisão de terceiro lugar";
+    precoDoIngresso = 440 / 4.10;
+    precoTotal = quantidadeIngressos * precoDoIngresso;
+
+} else if (tipoJogo === "IN" && etapaJogo === "DT" && categoria === "3") {
+    tipoJogo = "Internacional";
+    etapaJogo = "Decisão de terceiro lugar";
+    precoDoIngresso = 330 / 4.10;
+    precoTotal = quantidadeIngressos * precoDoIngresso;
+
+} else if (tipoJogo === "IN" && etapaJogo === "DT" && categoria === "4") {
+    tipoJogo = "Internacional";
+    etapaJogo = "Decisão de terceiro lugar";
+    precoDoIngresso = 170 / 4.10;
+    precoTotal = quantidadeIngressos * precoDoIngresso;
+
+} else if (tipoJogo === "IN" && etapaJogo === "FI" && categoria === "1") {
+    tipoJogo = "Internacional";
+    etapaJogo = "Final";
+    precoDoIngresso = 1980 / 4.10;
+    precoTotal = quantidadeIngressos * precoDoIngresso;
+
+} else if (tipoJogo === "IN" && etapaJogo === "FI" && categoria === "2") {
+    tipoJogo = "Internacional";
+    etapaJogo = "Final";
+    precoDoIngresso = 1320 / 4.10;
+    precoTotal = quantidadeIngressos * precoDoIngresso;
+
+} else if (tipoJogo === "IN" && etapaJogo === "FI" && categoria === "3") {
+    tipoJogo = "Internacional";
+    etapaJogo = "Final";
+    precoDoIngresso = 880 / 4.10;
+    precoTotal = quantidadeIngressos * precoDoIngresso;
+
+} else if (tipoJogo === "IN" && etapaJogo === "FI" && categoria === "4") {
+    tipoJogo = "Internacional";
+    etapaJogo = "Final";
+    precoDoIngresso = 330 / 4.10;
+    precoTotal = quantidadeIngressos * precoDoIngresso;
+
+} else if (tipoJogo === "DO" && etapaJogo === "SF" && categoria === "1") {
+    tipoJogo = "Nacional";
+    etapaJogo = "Semi-final";
+    precoDoIngresso = 1320;
+    precoTotal = quantidadeIngressos * precoDoIngresso;
+
+} else if (tipoJogo === "DO" && etapaJogo === "SF" && categoria === "2") {
+    tipoJogo = "Nacional";
+    etapaJogo = "Semi-final";
+    precoDoIngresso = 880;
+    precoTotal = quantidadeIngressos * precoDoIngresso;
+
+} else if (tipoJogo === "DO" && etapaJogo === "SF" && categoria === "3") {
+    tipoJogo = "Nacional";
+    etapaJogo = "Semi-final";
+    precoDoIngresso = 550;
+    precoTotal = quantidadeIngressos * precoDoIngresso;
+
+} else if (tipoJogo === "DO" && etapaJogo === "SF" && categoria === "4") {
+    tipoJogo = "Nacional";
+    etapaJogo = "Semi-final";
+    precoDoIngresso = 220;
+    precoTotal = quantidadeIngressos * precoDoIngresso;
+
+} else if (tipoJogo === "DO" && etapaJogo === "DT" && categoria === "1") {
+    tipoJogo = "Nacional";
+    etapaJogo = "Decisão de terceiro lugar";
+    precoDoIngresso = 660;
+    precoTotal = quantidadeIngressos * precoDoIngresso;
+
+} else if (tipoJogo === "DO" && etapaJogo === "DT" && categoria === "2") {
+    tipoJogo = "Nacional";
+    etapaJogo = "Decisão de terceiro lugar";
+    precoDoIngresso = 440;
+    precoTotal = quantidadeIngressos * precoDoIngresso;
+
+} else if (tipoJogo === "DO" && etapaJogo === "DT" && categoria === "3") {
+    tipoJogo = "Nacional";
+    etapaJogo = "Decisão de terceiro lugar";
+    precoDoIngresso = 330;
+    precoTotal = quantidadeIngressos * precoDoIngresso;
+
+} else if (tipoJogo === "DO" && etapaJogo === "DT" && categoria === "4") {
+    tipoJogo = "Nacional";
+    etapaJogo = "Decisão de terceiro lugar";
+    precoDoIngresso = 170;
+    precoTotal = quantidadeIngressos * precoDoIngresso;
+
+} else if (tipoJogo === "DO" && etapaJogo === "FI" && categoria === "1") {
+    tipoJogo = "Nacional";
+    etapaJogo = "Final";
+    precoDoIngresso = 1980;
+    precoTotal = quantidadeIngressos * precoDoIngresso;
+
+} else if (tipoJogo === "DO" && etapaJogo === "FI" && categoria === "2") {
+    tipoJogo = "Nacional";
+    etapaJogo = "Final";
+    precoDoIngresso = 1320;
+    precoTotal = quantidadeIngressos * precoDoIngresso;
+
+} else if (tipoJogo === "DO" && etapaJogo === "FI" && categoria === "3") {
+    tipoJogo = "Nacional";
+    etapaJogo = "Final";
+    precoDoIngresso = 880;
+    precoTotal = quantidadeIngressos * precoDoIngresso;
+
+} else if (tipoJogo === "DO" && etapaJogo === "FI" && categoria === "4") {
+    tipoJogo = "Nacional";
+    etapaJogo = "Final";
+    precoDoIngresso = 330;
+    precoTotal = quantidadeIngressos * precoDoIngresso;
 
 } else {
-    etapaJogo = "Final";
-}
-
-switch (tipoJogo, etapaJogo, categoria){
-    case "IN" && "SF" && "1":
-        precoDoIngresso = 1320 / 4.10;
-        precoTotal = quantidadeIngressos * precoDoIngresso;
-        break;
-    
-    case "IN" && "SF" && "2":
-        precoDoIngresso = 880 / 4.10;
-        precoTotal = quantidadeIngressos * precoDoIngresso;
-        break;
-
-    case "IN" && "SF" && "3":
-        precoDoIngresso = 550 / 4.10;
-        precoTotal = quantidadeIngressos * precoDoIngresso;
-        break;
-
-    case "IN" && "SF" && "4":
-        precoDoIngresso = 220 / 4.10;
-        precoTotal = quantidadeIngressos * precoDoIngresso;
-        break;
-
-    case "IN" && "DT" && "1":
-        precoDoIngresso = 660 / 4.10;
-        precoTotal = quantidadeIngressos * precoDoIngresso;
-        break;
-
-    case "IN" && "DT" && "2":
-        precoDoIngresso = 440 / 4.10;
-        precoTotal = quantidadeIngressos * precoDoIngresso;
-        break;
-
-    case "IN" && "DT" && "3":
-        precoDoIngresso = 330 / 4.10;
-        precoTotal = quantidadeIngressos * precoDoIngresso;
-        break;
-
-    case "IN" && "DT" && "4":
-        precoDoIngresso = 170 / 4.10;
-        precoTotal = quantidadeIngressos * precoDoIngresso;
-        break;
-
-    case "IN" && "FI" && "1":
-        precoDoIngresso = 1980 / 4.10;
-        precoTotal = quantidadeIngressos * precoDoIngresso;
-        break;
-
-    case "IN" && "FI" && "2":
-        precoDoIngresso = 1320 / 4.10;
-        precoTotal = quantidadeIngressos * precoDoIngresso;
-        break;
-
-    case "IN" && "FI" && "3":
-        precoDoIngresso = 880 / 4.10;
-        precoTotal = quantidadeIngressos * precoDoIngresso;
-        break;
-
-    case "IN" && "FI" && "4":
-        precoDoIngresso = 330 / 4.10;
-        precoTotal = quantidadeIngressos * precoDoIngresso;
-        break;
-
-    case "DO" && "SF" && "1":
-        precoDoIngresso = 1320;
-        precoTotal = quantidadeIngressos * precoDoIngresso;
-        break;
-    
-    case "DO" && "SF" && "2":
-        precoDoIngresso = 880;
-        precoTotal = quantidadeIngressos * precoDoIngresso;
-        break;
-
-    case "DO" && "SF" && "3":
-        precoDoIngresso = 550;
-        precoTotal = quantidadeIngressos * precoDoIngresso;
-        break;
-
-    case "DO" && "SF" && "4":
-        precoDoIngresso = 220;
-        precoTotal = quantidadeIngressos * precoDoIngresso;
-        break;
-
-    case "DO" && "DT" && "1":
-        precoDoIngresso = 660;
-        precoTotal = quantidadeIngressos * precoDoIngresso;
-        break;
-
-    case "DO" && "DT" && "2":
-        precoDoIngresso = 440;
-        precoTotal = quantidadeIngressos * precoDoIngresso;
-        break;
-
-    case "DO" && "DT" && "3":
-        precoDoIngresso = 330;
-        precoTotal = quantidadeIngressos * precoDoIngresso;
-        break;
-
-    case "DO" && "DT" && "4":
-        precoDoIngresso = 170;
-        precoTotal = quantidadeIngressos * precoDoIngresso;
-        break;
-
-    case "DO" && "FI" && "1":
-        precoDoIngresso = 1980;
-        precoTotal = quantidadeIngressos * precoDoIngresso;
-        break;
-
-    case "DO" && "FI" && "2":
-        precoDoIngresso = 1320;
-        precoTotal = quantidadeIngressos * precoDoIngresso;
-        break;
-
-    case "DO" && "FI" && "3":
-        precoDoIngresso = 880;
-        precoTotal = quantidadeIngressos * precoDoIngresso;
-        break;
-
-    case "DO" && "FI" && "4":
-        precoDoIngresso = 330;
-        precoTotal = quantidadeIngressos * precoDoIngresso;
-        break;  
+    console.log("Digite informações válidas.")
 }
 
 console.log("---Dados da compra---\nNome do Cliente: " + nome + "\nTipo do jogo: " + tipoJogo +
