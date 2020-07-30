@@ -94,14 +94,25 @@ console.log(`O maior número é ${valorMaximo} e o menor é ${valorMinimo}.`)
 
 // Desafio 2
 /*
-const primeiroJogador = Number(prompt("Digite um número entre 0 e 100:"));
+const numeroMisterioso = Number(prompt("Digite um número entre 0 e 100:"));
 
-if (primeiroJogador >= 0 && primeiroJogador <= 100) {
-    console.log("Vamos jogar!");
-} else {
-    console.log("Você deve digitar um número entre 0 e 100!")
+console.log("Vamos jogar!");
+
+let tentativas = 0;
+let acertou = false;
+
+while (acertou === false) {
+    const numeroJogador = Number(prompt("Tente acertar o número do primeiro jogador!"));
+    tentativas++;
+    if (numeroJogador !== numeroMisterioso) {
+        if (numeroJogador > numeroMisterioso) {
+            console.log(`Errou feio... errou rude! O número é menor que ${numeroJogador}`);
+        } else {
+            console.log(`Errou feio... errou rude! O número é maior que ${numeroJogador}`);
+        }
+    } else {
+        console.log(`Acertou!\n O número de tentativas foi: ${tentativas}`);
+        acertou = true;
+    }
 }
-
-const segundoJogador = Number(prompt("Tente, digitando, acertar o número do primeiro jogador!"));
 */
-
