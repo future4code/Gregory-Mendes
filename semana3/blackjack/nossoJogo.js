@@ -17,11 +17,10 @@ let cartasUsuario = [];
 let cartasComputador = [];
 let pontosUsuario = 0;
 let pontosComputador = 0;
-let carta;
 
-if(confirm("Quer iniciar uma nova rodada?")) {
+if (confirm("Quer iniciar uma nova rodada?")) {
    for (let i = 0; i < 4; i++) {
-      carta = comprarCarta();
+      const carta = comprarCarta();
       if (i < 2) {
          cartasUsuario.push(carta.texto);
          pontosUsuario += carta.valor;
@@ -30,8 +29,9 @@ if(confirm("Quer iniciar uma nova rodada?")) {
          pontosComputador += carta.valor;
       }
    }
+
    console.log(`Usuário - cartas: ${cartasUsuario} - pontuação: ${pontosUsuario}`);
-   console.log(`Computador - cartas: ${cartasComputador} - pontuação: ${pontosComputador} `);
+   console.log(`Computador - cartas: ${cartasComputador} - pontuação: ${pontosComputador}`);
 
    if (pontosUsuario > pontosComputador) {
       console.log("O usuário ganhou!");
@@ -40,5 +40,7 @@ if(confirm("Quer iniciar uma nova rodada?")) {
    } else {
       console.log("Empate!");
    }
+} else {
+   console.log("O jogo acabou.");   
 }
 */
