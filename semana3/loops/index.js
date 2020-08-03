@@ -116,3 +116,28 @@ while (acertou === false) {
     }
 }
 */
+
+
+// Desafio 3
+/*
+console.log("Vamos Jogar!");
+
+let numeroComputador = Math.floor((Math.random() * 100) + 1);
+let tentativas = 0;
+let acertou = false;
+
+while(acertou === false) {
+    const numeroJogador = Number(prompt("Tente acertar o número misterioso!"));
+    tentativas++;
+    if (numeroJogador !== numeroComputador) {
+        if (numeroJogador > numeroComputador) {
+            console.log(`Errou feio... errou rude! O número é menor que ${numeroJogador}`);
+        } else {
+            console.log(`Errou feio... errou rude! O número é maior que ${numeroJogador}`);
+        }
+    } else {
+        console.log(`Acertou!\n Você tentou ${tentativas} vezes.`);
+        acertou = true;
+    }
+}
+*/
