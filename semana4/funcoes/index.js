@@ -42,11 +42,9 @@ minhasInformacoes();
 */
 
 // B
-/*
-let souEstudante = true;
 
-function informacoesPessoais(nome, idade, cidade, souEstudante) {
-    if (souEstudante) {
+/* function informacoesPessoais(nome, idade, cidade, souEstudante) {
+    if (souEstudante === true) {
         return console.log(`Eu sou ${nome}, tenho ${idade} anos, moro em ${cidade} e sou estudante.`);
     } else {
         return console.log(`Eu sou ${nome}, tenho ${idade} anos, moro em ${cidade} e não sou estudante.`);
@@ -70,9 +68,179 @@ console.log(resultado);
 */
 
 // B
-
+/*
 const numeroMaiorOuIgual = function(numero1, numero2) {
     if (numero1 >= numero2) {
-        return 
+        return true;
+    } else {
+        return false;
     }
 }
+
+const resultadoBooleano = numeroMaiorOuIgual(13, 2);
+console.log(resultadoBooleano);
+*/
+
+// C
+/*
+function imprimirDezVezes(mensagem) {
+    for (let i = 1; i <= 10; i++) {
+        console.log(`${i}. ${mensagem}`);
+    }
+
+    return mensagem;
+}
+
+imprimirDezVezes("Oi, eu sou o Greg!");
+*/
+
+
+// Exercício 6
+
+//const array = [10, 23, 45, 78, 90, 52, 35, 67, 84, 22];
+
+// A
+/*
+function quantidadeElementos(arrayDeNumeros) {
+    return arrayDeNumeros.length;
+}
+
+console.log(quantidadeElementos(array));
+*/
+
+// B
+/*
+function verificaNumeroPar(numero) {
+    numeroPar = true;
+    if (numero % 2 === 0) {
+        true
+    } else {
+        numeroPar = false
+    }
+
+    return numeroPar;
+}
+
+console.log(verificaNumeroPar(17));
+*/
+
+
+// C
+/*
+function mostrarQuantidadeNumerosPares(arrayDeNumeros) {
+    let qtdPares = 0;
+    for (let i = 0; i < arrayDeNumeros.length; i++) {
+        if (arrayDeNumeros[i] % 2 === 0) {
+            qtdPares++;
+        }
+    }
+
+    return qtdPares;
+}
+
+console.log(mostrarQuantidadeNumerosPares(array));
+*/
+
+// D
+/*
+function mostrarQuantidadeNumerosPares(arrayDeNumeros) {
+    let qtdPares = 0;
+    for (let i = 0; i < arrayDeNumeros.length; i++) {
+        if (verificaNumeroPar(arrayDeNumeros[i])) {
+            qtdPares++;
+        }
+    }
+
+    return qtdPares;
+}
+
+console.log(mostrarQuantidadeNumerosPares(array));
+*/
+
+
+// Desafios
+
+// Exercício 1
+/*
+// 1
+const resultadoSoma = (resultado) => {
+    return console.log(resultado);
+}
+
+// 2
+const somaNumeros = (numero1, numero2) => {
+    const soma = numero1 + numero2;
+    resultadoSoma(soma);
+}
+
+const resposta = somaNumeros(2, 2);
+*/
+
+
+// Exercício 2
+
+//const numeros = [0, 8, 23, 16, 10, 15, 41, 12, 13];
+
+// A
+/*
+function mostrarQuantidadeNumerosPares(arrayDeNumeros) {
+    let dobroDosPares = []
+    for (let i = 0; i < arrayDeNumeros.length; i++) {
+        if (arrayDeNumeros[i] % 2 === 0) {
+            dobroDosPares.push(arrayDeNumeros[i] * 2);
+        }
+    }
+
+    return dobroDosPares;
+}
+
+console.log(mostrarQuantidadeNumerosPares(numeros));
+*/
+
+// B
+/*
+function mostrarMaiorNumero(arrayDeNumeros) {
+    let maiorNumero = -Infinity;
+    for (let i = 0; i < arrayDeNumeros.length; i++) {
+        if (arrayDeNumeros[i] > maiorNumero) {
+            maiorNumero = arrayDeNumeros[i];
+        }
+    }
+
+    return maiorNumero;
+}
+
+console.log(mostrarMaiorNumero(numeros));
+*/
+
+// C
+/*
+function mostrarMaiorNumero(arrayDeNumeros) {
+    let maiorNumero = -Infinity;
+    let indiceMaiorNumero = 0;
+    for (let i = 0; i < arrayDeNumeros.length; i++) {
+        if (arrayDeNumeros[i] > maiorNumero) {
+            maiorNumero = arrayDeNumeros[i];
+            indiceMaiorNumero = i;
+        }
+    }
+
+    return indiceMaiorNumero;
+}
+
+console.log(mostrarMaiorNumero(numeros));
+*/
+
+// D
+/*
+function mostrarMaiorNumero(arrayDeNumeros) {
+    let numerosInvertidos = [];
+    for (let i = arrayDeNumeros.length - 1; i >= 0; i--) {
+        numerosInvertidos.push(arrayDeNumeros[i]);
+    }
+
+    return numerosInvertidos;
+}
+
+console.log(mostrarMaiorNumero(numeros));
+*/
