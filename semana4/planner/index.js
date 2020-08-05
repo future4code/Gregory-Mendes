@@ -1,5 +1,5 @@
 function adicionarTarefa() {
-    const guardaTarefa = document.getElementById("tarefa");
+    const guardaTarefa = document.getElementById("tarefa").value;
     const diaDaSemana = document.getElementById("dias-semana").value;
 
     switch (diaDaSemana) {
