@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="index.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <section id="cadastro-despesas">
+        <h1>Controlador de Despesas</h1>
+        <h2>Cadastrar despesa</h2>
+        <label for="valor">Valor (R$):</label>
+        <input type="number" id="valor">
+        <label for="tipo-despesa">Tipo de despesa:</label>
+        <select name="tipos-despesas" id="tipo-despesa">
+            <option value="casa">Casa</option>
+            <option value="viajem">Viajem</option>
+            <option value="diversao">Diversão</option>
+            <option value="outros">Outros</option>
+        </select>
+        <label for="descricao">Descrição:</label>
+        <input type="text" id="descricao">
+    <button onclick="cadastrarDespesa()">Cadastrar despesa</button>
+    </section>
+    <section id="detalhes-despesas">
+        
+    </section>
+    <section id="extrato-despesas">
+        
+    </section>
+</body>
+</html>
