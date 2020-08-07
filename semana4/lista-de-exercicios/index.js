@@ -90,3 +90,17 @@ while(i < quantidadeDeNumerosPares) {
   i++;
 } */
 
+//Exercício 4
+/* 
+const tipoDeTriangulo = (valorA, valorB, valorC) => {
+    if (valorA !== valorB && valorA !== valorC && valorB !== valorC) {
+        console.log("O triângulo é Escaleno.");
+    } else if (valorA === valorB && valorA === valorC && valorB === valorC) {
+        console.log("O triângulo é Equilátero.");
+    } else {
+        console.log("O triângulo é Isósceles.");
+    }
+}
+
+const resultado = tipoDeTriangulo(8, 5, 7);
+console.log(resultado); */
