@@ -35,4 +35,9 @@
     3° console: 8. */
 
 // Exercício 4
-/* */
+/* Temos 3 variáveis, uma que recebe um array de números (numeros), outra que recebe um valor infinito
+    (numero1) e outra que recebe 0 (numero2). Um for...of é usado para percorrer o array e, para cada numero
+    dentro do array, se o número analisado for menor do que o valor em numero1 (Infinity), então o valor em
+    numero1 será substituido pelo novo e se o numero for maior do que o valor em numero2, então a variável 
+    numero2 também recebe este valor, substituindo o anterior.
+    Ao final, os consoles mostram o valor final de numero1 e numero2, que são, respectivamente: -10 e 1590 */
