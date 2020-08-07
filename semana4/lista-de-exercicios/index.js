@@ -26,7 +26,7 @@
 
 //Exercício 3
 /* Temos 3 variáveis declaradas: um array de números (numeros) e dois arrays vazios (array1 e array2).
-    É utilizado um for...of para percorrer o array de números e a cada número percorrido ele executará um if,
+    É utilizado um for...of... para percorrer o array de números e a cada número percorrido ele executará um if,
     onde se o resto da divisão entre numero atual por 2 for igual a 0 (se o numero atual for par), este valor
     será empurrado para dentro do array1, senão (caso for ímpar) será empurrado para o array2.
     Após isso, será exibido: 1° console: Quantidade total de números 14 (onde 14 é representado por 
@@ -34,10 +34,38 @@
     2° console: 6;
     3° console: 8. */
 
-// Exercício 4
+//Exercício 4
 /* Temos 3 variáveis, uma que recebe um array de números (numeros), outra que recebe um valor infinito
-    (numero1) e outra que recebe 0 (numero2). Um for...of é usado para percorrer o array e, para cada numero
+    (numero1) e outra que recebe 0 (numero2). Um for...of... é usado para percorrer o array e, para cada numero
     dentro do array, se o número analisado for menor do que o valor em numero1 (Infinity), então o valor em
     numero1 será substituido pelo novo e se o numero for maior do que o valor em numero2, então a variável 
     numero2 também recebe este valor, substituindo o anterior.
     Ao final, os consoles mostram o valor final de numero1 e numero2, que são, respectivamente: -10 e 1590 */
+
+
+//Exercícios de Lógica de Programação
+
+//Exercício 1
+//Podemos percorrer uma lista usando o while, o for e o for...of...
+
+//const array = [5, 7, 2, 85, 40, 9];
+
+//while
+/* 
+let i = 0;
+while (i < array.length) {
+    console.log(array[i]);
+    i++;
+} */
+
+//for
+/* 
+for (let i = 0; i < array.length; i++) {
+    console.log(array[i]);
+} */
+
+// for...of...
+/* 
+for (let numero of array) {
+    console.log(numero);
+} */
