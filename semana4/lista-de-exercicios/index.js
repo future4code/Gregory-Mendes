@@ -104,3 +104,37 @@ const tipoDeTriangulo = (valorA, valorB, valorC) => {
 
 const resultado = tipoDeTriangulo(8, 5, 7);
 console.log(resultado); */
+
+//Exercício 5
+
+const numero1 = Number(prompt("Digite o primeiro número:"));
+const numero2 = Number(prompt("Digite o segundo número:"));
+const diferenca = numero1 - numero2;
+const diferencaReversa = numero2 - numero1;
+
+if (numero1 > numero2) {
+    console.log(`O maior número é: ${numero1}.`);
+} else if (numero1 < numero2){
+    console.log(`O maior número é: ${numero2}.`);
+} else {
+    console.log("Os números são iguais.")
+}
+
+if (numero1 % numero2 === 0 ) {
+    console.log(`${numero1} é divisível por ${numero2}`);
+} else {
+    console.log(`${numero1} não é divisível por ${numero2}`)
+}
+
+if (numero2 % numero1 === 0 ) {
+    console.log(`${numero2} é divisível por ${numero1}`);
+} else {
+    console.log(`${numero2} não é divisível por ${numero1}`);
+}
+
+if (numero1 < numero2) {
+    console.log(`A diferença entre eles é de ${diferencaReversa}`);
+} else {
+    console.log(`A diferença entre eles é de ${diferenca}`);
+}
+
