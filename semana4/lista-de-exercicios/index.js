@@ -69,3 +69,11 @@ for (let i = 0; i < array.length; i++) {
 for (let numero of array) {
     console.log(numero);
 } */
+
+//Exercício 2
+/*  
+Resposta A: false
+Resposta B: false
+Resposta C: true
+Resposta D: true
+Resposta E: true   */
