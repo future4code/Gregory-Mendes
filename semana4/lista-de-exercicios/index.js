@@ -76,4 +76,17 @@ Resposta A: false
 Resposta B: false
 Resposta C: true
 Resposta D: true
-Resposta E: true   */
+Resposta E: true */
+
+//Exercício 3
+/* O código não funciona porque a variável i não estava recebendo incremento após apresentar o resultado
+    no console, criando um loop infinito, além de que o valor de i deve ser somente menor que a quantidade
+    digitada pelo usuário para exibir exatamente o número de pares esperado.
+
+const quantidadeDeNumerosPares = Number(prompt("Digite um valor para exibir a quantidade de pares."))
+let i = 0
+while(i < quantidadeDeNumerosPares) {
+  console.log(i*2)
+  i++;
+} */
+
