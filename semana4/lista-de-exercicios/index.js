@@ -175,3 +175,13 @@ function mostrarSegundoMaiorEMenor(arrayDeNumeros) {
 }
 
 mostrarSegundoMaiorEMenor(array); */
+
+//Exercício 2
+/* 
+const mensagem = "Hello Labenu!"
+
+const exibeAlert = (mensagemDeAlert) => {
+    alert(mensagemDeAlert);
+}
+
+exibeAlert(mensagem); */
