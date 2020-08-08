@@ -227,7 +227,7 @@ console.log(`Venha assistir ao filme ${filme.titulo}, de ${filme.ano}, dirigido 
              ` e ${filme.elenco[filme.elenco.length - 1]}.`); */
 
 //Exercício 4
-/* 
+/*
 const pessoa = {
     nome: "Antonio",
     idade: 35,
@@ -235,11 +235,10 @@ const pessoa = {
     endereco: "Rua dos Bobos, n° 0"
 }
 
-function anonimizarPessoa(pessoaAleatoria) {
+function anonimizarPessoa() {
     const pessoaAnonima = {
         ...pessoa,
         nome: "Anônima(o)"
-
     }
 
     return console.log(pessoaAnonima);
@@ -247,3 +246,24 @@ function anonimizarPessoa(pessoaAleatoria) {
 
 console.log(pessoa);
 anonimizarPessoa(pessoa); */
+// Exercícios de Funções de Array
+
+//Exercício 1
+/*
+const pessoas = [
+	{ nome: "Pedro", idade: 20 },
+	{ nome: "João", idade: 10 },
+	{ nome: "Paula", idade: 12 },
+	{ nome: "Artur", idade: 89 } 
+]
+
+const callbackAdultos = (pessoa) => {
+    if (pessoa.idade < 20) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+const mostraAdultos = pessoas.filter(callbackAdultos);
+console.log(mostraAdultos); */
