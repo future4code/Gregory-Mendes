@@ -249,6 +249,7 @@ anonimizarPessoa(pessoa); */
 // Exercícios de Funções de Array
 
 //Exercício 1
+// A
 /*
 const pessoas = [
 	{ nome: "Pedro", idade: 20 },
@@ -267,3 +268,24 @@ const callbackAdultos = (pessoa) => {
 
 const mostraAdultos = pessoas.filter(callbackAdultos);
 console.log(mostraAdultos); */
+
+// B
+/*
+const pessoas = [
+	{ nome: "Pedro", idade: 20 },
+	{ nome: "João", idade: 10 },
+	{ nome: "Paula", idade: 12 },
+	{ nome: "Artur", idade: 89 } 
+]
+
+const callbackAdultos = (pessoa) => {
+    if (pessoa.idade < 20) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+const mostraAdolescentes = pessoas.filter(callbackAdultos);
+console.log(mostraAdolescentes); */
+
