@@ -106,7 +106,7 @@ const resultado = tipoDeTriangulo(8, 5, 7);
 console.log(resultado); */
 
 //Exercício 5
-
+/*
 const numero1 = Number(prompt("Digite o primeiro número:"));
 const numero2 = Number(prompt("Digite o segundo número:"));
 const diferenca = numero1 - numero2;
@@ -136,5 +136,42 @@ if (numero1 < numero2) {
     console.log(`A diferença entre eles é de ${diferencaReversa}`);
 } else {
     console.log(`A diferença entre eles é de ${diferenca}`);
+} */
+
+
+//Exercícios de Funções
+
+//Exercício 1
+/* 
+const array = [44, 23, 57, 2, 9, 113, 98, 52, 95, 37, 26, 450, -50];
+
+function mostrarSegundoMaiorEMenor(arrayDeNumeros) {
+    let maiorNumero = -Infinity;
+    let menorNumero = Infinity;
+    let segundoMaior = -Infinity;
+    let segundoMenor = Infinity;
+    
+    for (let numero of arrayDeNumeros) {
+        if (numero > maiorNumero) {
+            maiorNumero = numero;
+        }
+
+        if (numero < menorNumero) {
+            menorNumero = numero;
+        }   
+    }
+
+    for (let numero of arrayDeNumeros) {
+        if (numero > segundoMaior && numero < maiorNumero) {
+            segundoMaior = numero;
+        }
+
+        if (numero < segundoMenor && numero > menorNumero) {
+            segundoMenor = numero;
+        }   
+    }
+
+    return console.log(`O segundo maior é o ${segundoMaior}.\nO segundo menor é o ${segundoMenor}.`);
 }
 
+mostrarSegundoMaiorEMenor(array); */
