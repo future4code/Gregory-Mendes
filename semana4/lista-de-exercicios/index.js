@@ -196,5 +196,20 @@ exibeAlert(mensagem); */
     Podemos utilizar objetos e arrays quando, por exemplo, eu quero que cada elemento de
     um array seja um objeto diferente, cada um com suas propriedades. Também podemos
     acessar propriedades de um objeto externo para fazer modificações em um array, como
-    por exemplo as propriedades: .push(), .splice(), .pop(), .indexOf() e etc.*/ 
+    por exemplo as propriedades: .push(), .splice(), .pop(), .indexOf() e etc.*/
+
+//Exercício 2
+/* 
+function criarRetangulo (lado1, lado2) {
+    const retangulo = {
+        largura: lado1,
+        altura: lado2,
+        perimetro: 2 * (lado1 + lado2),
+        area: lado1 * lado2
+    }
+
+    return retangulo;
+}
+
+console.log(criarRetangulo(5, 6)) */
 
