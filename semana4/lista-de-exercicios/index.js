@@ -185,3 +185,16 @@ const exibeAlert = (mensagemDeAlert) => {
 }
 
 exibeAlert(mensagem); */
+
+
+//Exercícios de Objetos
+
+//Exercício 1
+/* Os objetos são estruturas que servem para representar algo complexo do mundo real de maneira
+    mais intuitiva e organizada. Por exemplo, uma fruta tem nome, cor, sabor, textura, etc. 
+    A fruta em si poderia ser nosso objeto e o restante, suas propriedades.
+    Podemos utilizar objetos e arrays quando, por exemplo, eu quero que cada elemento de
+    um array seja um objeto diferente, cada um com suas propriedades. Também podemos
+    acessar propriedades de um objeto externo para fazer modificações em um array, como
+    por exemplo as propriedades: .push(), .splice(), .pop(), .indexOf() e etc.*/ 
+
