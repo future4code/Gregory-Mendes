@@ -225,3 +225,25 @@ const filme = {
 console.log(`Venha assistir ao filme ${filme.titulo}, de ${filme.ano}, dirigido por ${filme.diretor}` +
              `e estrelado por ${filme.elenco.slice(0, filme.elenco.length - 1)}` +
              ` e ${filme.elenco[filme.elenco.length - 1]}.`); */
+
+//Exercício 4
+/* 
+const pessoa = {
+    nome: "Antonio",
+    idade: 35,
+    email: "antoniando@gmail.com",
+    endereco: "Rua dos Bobos, n° 0"
+}
+
+function anonimizarPessoa(pessoaAleatoria) {
+    const pessoaAnonima = {
+        ...pessoa,
+        nome: "Anônima(o)"
+
+    }
+
+    return console.log(pessoaAnonima);
+}
+
+console.log(pessoa);
+anonimizarPessoa(pessoa); */
