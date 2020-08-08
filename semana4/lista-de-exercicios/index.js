@@ -213,3 +213,15 @@ function criarRetangulo (lado1, lado2) {
 
 console.log(criarRetangulo(5, 6)) */
 
+//Exercício 3
+/* 
+const filme = {
+    titulo: "The Greatest Showman",
+    ano: 2017,
+    diretor: "Michael Gracey",
+    elenco: ["Hugh Jackman", " Zac Efron", " Zendaya", " Keala Settle", " Michele Williams", "Rebecca Ferguson"]
+}
+
+console.log(`Venha assistir ao filme ${filme.titulo}, de ${filme.ano}, dirigido por ${filme.diretor}` +
+             `e estrelado por ${filme.elenco.slice(0, filme.elenco.length - 1)}` +
+             ` e ${filme.elenco[filme.elenco.length - 1]}.`); */
