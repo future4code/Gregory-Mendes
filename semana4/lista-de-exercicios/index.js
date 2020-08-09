@@ -289,3 +289,15 @@ const callbackAdultos = (pessoa) => {
 const mostraAdolescentes = pessoas.filter(callbackAdultos);
 console.log(mostraAdolescentes); */
 
+//Exercício 2
+
+const array = [1, 2, 3, 4, 5, 6];
+
+// A
+
+
+array.forEach((numero, index) => {
+    array[index] *= 2;  
+});
+
+console.log(array);
