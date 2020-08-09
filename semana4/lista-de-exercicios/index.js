@@ -308,3 +308,15 @@ array.forEach((numero, index) => {
 });
 
 console.log(array); */
+
+// C
+/* 
+array.forEach((numero, index) => {
+    if (numero % 2 === 0) {
+        array[index] = `${numero} é par.`;
+    } else {
+        array[index] = `${numero} é ímpar.`;
+    }
+});
+
+console.log(array); */
