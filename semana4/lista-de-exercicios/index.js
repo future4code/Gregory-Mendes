@@ -345,3 +345,13 @@ const mostraAutorizados = pessoas.filter((pessoa) => {
 console.log(mostraAutorizados); */
 
 // B
+/*
+const mostraNaoAutorizados = pessoas.filter((pessoa) => {
+    if (pessoa.idade < 14 || pessoa.idade >= 70 || pessoa.altura < 1.5) {
+        return true;
+    }
+    
+    return false;
+})
+
+console.log(mostraNaoAutorizados); */
