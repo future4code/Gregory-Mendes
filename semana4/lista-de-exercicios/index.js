@@ -294,10 +294,17 @@ console.log(mostraAdolescentes); */
 const array = [1, 2, 3, 4, 5, 6];
 
 // A
-
-
+/* 
 array.forEach((numero, index) => {
     array[index] *= 2;  
 });
 
-console.log(array);
+console.log(array); */
+
+//B
+/* 
+array.forEach((numero, index) => {
+    array[index] = (numero * 3).toString();
+});
+
+console.log(array); */
