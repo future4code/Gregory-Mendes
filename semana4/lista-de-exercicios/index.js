@@ -322,7 +322,7 @@ array.forEach((numero, index) => {
 console.log(array); */
 
 //Exercícío 3
-
+/* 
 const pessoas = [
 	{ nome: "Paula", idade: 12, altura: 1.8},
 	{ nome: "João", idade: 20, altura: 1.3},
@@ -330,7 +330,7 @@ const pessoas = [
 	{ nome: "Luciano", idade: 22, altura: 1.8},
 	{ nome: "Artur", idade: 10, altura: 1.2},
 	{ nome: "Soter", idade: 70, altura: 1.9}
-]
+] */
 
 // A
 /* 
@@ -355,3 +355,46 @@ const mostraNaoAutorizados = pessoas.filter((pessoa) => {
 })
 
 console.log(mostraNaoAutorizados); */
+
+//Exercícío 4
+/* 
+const consultas = [
+	{ nome: "João", genero: "masculino", cancelada: true, dataDaConsulta: "01/10/2020" },
+	{ nome: "Pedro", genero: "masculino", cancelada: false, dataDaConsulta: "02/10/2020" },
+	{ nome: "Paula", genero: "feminino", cancelada: true, dataDaConsulta: "03/11/2020" },
+	{ nome: "Márcia", genero: "feminino", cancelada: false, dataDaConsulta: "04/11/2020" }
+]
+
+const gerarEmailConfirmacao = (paciente) => {
+    if (paciente.genero === "masculino") {
+        return `Olá, Sr. ${paciente.nome}. Estamos enviando esta mensagem para ` +
+            `lembrá-lo da sua consulta no dia ${paciente.dataDaConsulta}. Por favor, acuse ` +
+            `o recebimento deste e-mail.`
+    } else {
+        return `Olá, Sra. ${paciente.nome}. Estamos enviando esta mensagem para ` +
+            `lembrá-la da sua consulta no dia ${paciente.dataDaConsulta}. Por favor, acuse ` +
+            `o recebimento deste e-mail.`
+    }
+}
+
+const gerarEmailCancelamento = (paciente) => {
+    if (paciente.genero === "masculino") {
+        return `Olá, Sr. ${paciente.nome}. Infelizmente, sua consulta marcada ` +
+            `para o dia ${paciente.dataDaConsulta} foi cancelada. Se quiser, pode entrar em ` +
+            `contato conosco para remarcá-la.`
+    } else {
+        return `Olá, Sra. ${paciente.nome}. Infelizmente, sua consulta marcada ` +
+            `para o dia ${paciente.dataDaConsulta} foi cancelada. Se quiser, pode entrar em ` +
+            `contato conosco para remarcá-la.`
+    }
+}
+
+const confirmarConsulta = consultas.map((paciente, index) => {
+    if (paciente.cancelada === false) {
+        return gerarEmailConfirmacao(paciente);
+    } else {
+        return gerarEmailCancelamento(paciente);
+    }  
+})
+
+console.log (confirmarConsulta); */
