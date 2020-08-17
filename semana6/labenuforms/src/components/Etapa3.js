@@ -15,7 +15,7 @@ class Etapa3 extends React.Component {
     render() {
         return (
             <ThirdStepContainer>
-                <h2>3ª Etapa - Dados Gerais</h2>
+                <h2>3ª Etapa - Dados Gerais de Ensino</h2>
                 <p>7. Por que não completou o curso de graduação?</p>
                 <input/>
                 <p>8. Fez algum curso complementar?</p>

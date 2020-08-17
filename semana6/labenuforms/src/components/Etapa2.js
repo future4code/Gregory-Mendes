@@ -20,7 +20,6 @@ class Etapa2 extends React.Component {
                 <input/>
                 <p>6. Qual a unidade de ensino?</p>
                 <input/>
-                <p>3. Qual o seu e-mail?</p>
             </SecondStepContainer>
         );
     }    
