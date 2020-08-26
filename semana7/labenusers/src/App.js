@@ -1,29 +1,37 @@
 import React from 'react';
+import axios from 'axios'
+import RegisterUserPage from './components/RegisterUserPage'
+import UsersListPage from './components/UsersListPage'
 import './App.css';
-import RegisterUser from "./components/RegisterUser"
-import UsersList from "./components/UsersList"
 
-export default class App extends React.Component {
-
-  state  = {
-    showUsersList: false,
+class App extends React.Component {
+  state = {
+    currentPage: "registerUserPage",
   }
 
-  onClickUsersList() {
-    if (this.state.showUsersList) {}
-    this.setState({showUsersList: !this.state.showUsersList});
+  changeCurrentPage = () => {
+    this.state.currentPage === "registerUserPage"
+    ? this.setState({currentPage: "usersListPage"})
+    : this.setState({currentPage: "registerUserPage"})
     
-    return <UsersList/>
   }
 
   render() {
-    const showCurrentPage = this.state.showUsersList === false ? <RegisterUser/> : <UsersList/>
-    console.log(this.state.showUsersList)
+    const currentPage = () => {
+      if (this.state.currentPage === "registerUserPage") {
+        return <RegisterUserPage/>
+      } else if (this.state.currentPage === "usersListPage") {
+        return <UsersListPage/>
+      }
+    }
+    
     return (
       <div>
-        <button onClick={() => this.onClickUsersList()}>Ver lista de usuários</button>
-        {showCurrentPage}
+        <button onClick={this.changeCurrentPage}>Ir para lista de usuários</button>
+        {currentPage()}
       </div>
     );
-  }
+  };
 }
+
+export default App

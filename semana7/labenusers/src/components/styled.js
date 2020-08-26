@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
-const RegisterContainer = styled.div`
-
+const DeleteButton = styled.span`
+    color: red;
 `
 
-export default RegisterContainer
+export default DeleteButton
