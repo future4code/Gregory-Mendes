@@ -43,10 +43,6 @@ class UsersListPage extends React.Component {
         }
     }
 
-    onClickUserName = () => {
-        
-    }
-
     render() {
         return (
             <div>
