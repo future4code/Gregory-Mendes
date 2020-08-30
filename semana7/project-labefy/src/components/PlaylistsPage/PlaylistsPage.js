@@ -60,14 +60,14 @@ class PlaylistsPage extends React.Component {
         }
     }
 
-    onClickPlaylistName = () => {
-
+    onPlaylistClick = () => {
+        this.props.onClickPlaylist()
     }
     
     render() {
         const showPlaylists = this.state.playlists.map((playlist) => {
             return (
-                <p key={playlist.id} onClick={}>
+                <p key={playlist.id} onClick={this.onPlaylistClick}>
                     {playlist.name}
                     <button onClick={() => this.deletePlaylist(playlist.id)}>Excluir</button>
                 </p>
