@@ -23,7 +23,11 @@ export default class App extends React.Component {
           />
         )
       } else if (this.state.currentPage === "playlistDetailsPage") {
-        return <PlaylistDetailPage/>
+        return (
+          <PlaylistDetailPage
+            onBackButtonClick={this.changePage}
+          />
+        )
       }
     }
 

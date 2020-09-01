@@ -63,7 +63,7 @@ class PlaylistsPage extends React.Component {
     onPlaylistClick = () => {
         this.props.onClickPlaylist()
     }
-    
+    n
     render() {
         const showPlaylists = this.state.playlists.map((playlist) => {
             return (
