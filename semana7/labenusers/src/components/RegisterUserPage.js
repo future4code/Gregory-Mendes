@@ -28,7 +28,6 @@ class RegisterUserPage extends React.Component {
 
         request
         .then((response) => {
-            console.log(response)
             this.setState({nameValue: "", emailValue: ""})
         })
         .catch((error) => {

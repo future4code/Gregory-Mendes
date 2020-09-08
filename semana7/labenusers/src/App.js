@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios'
 import RegisterUserPage from './components/RegisterUserPage'
 import UsersListPage from './components/UsersListPage'
 import './App.css';
@@ -7,12 +6,13 @@ import './App.css';
 class App extends React.Component {
   state = {
     currentPage: "registerUserPage",
+    pageButton: "Ir para lista de usuários"
   }
 
   changeCurrentPage = () => {
     this.state.currentPage === "registerUserPage"
-    ? this.setState({currentPage: "usersListPage"})
-    : this.setState({currentPage: "registerUserPage"})
+    ? this.setState({currentPage: "usersListPage", pageButton: "Ir para página de cadastro"})
+    : this.setState({currentPage: "registerUserPage", pageButton: "Ir para lista de usuários"})
     
   }
 
@@ -27,7 +27,7 @@ class App extends React.Component {
     
     return (
       <div>
-        <button onClick={this.changeCurrentPage}>Ir para lista de usuários</button>
+        <button onClick={this.changeCurrentPage}>{this.state.pageButton}</button>
         {currentPage()}
       </div>
     );
