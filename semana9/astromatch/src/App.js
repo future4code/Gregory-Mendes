@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import MatchPage from './screens/MatchPage/MatchPage';
-import MatchesListPage from './screens/MatchesListPage/MatchesListPage';
+import MatchListPage from './screens/MatchListPage/MatchListPage';
 import { AppContainer } from './styled'
 
 const App = () => {
@@ -22,7 +22,7 @@ const App = () => {
         break;
 
       case "matches-list-page":
-        page = <MatchesListPage onClickBackButton={changeToMatchPage}/>;
+        page = <MatchListPage onClickBackButton={changeToMatchPage}/>;
         break;
       
       default:

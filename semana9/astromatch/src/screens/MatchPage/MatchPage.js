@@ -10,7 +10,7 @@ const MatchPage = (props) => {
     const [bioValue, setBio] = useState("");
 
     useEffect(() => {
-        getNewPersonProfile(idValue);
+        getNewPersonProfile();
     }, [])
     
     const getNewPersonProfile = () => {
@@ -23,7 +23,7 @@ const MatchPage = (props) => {
             setBio(response.data.profile.bio);
         })
         .catch((error) => {
-            console.log(error.data);
+            window.alert("Ocorreu um erro inesperado. Tente novamente.");
         })
     }
 
@@ -48,7 +48,7 @@ const MatchPage = (props) => {
             console.log(response.data);
         })
         .catch((error) => {
-            console.log(error.message);
+            window.alert("Ocorreu um erro inesperado. Tente novamente.");
         })
     }
 
@@ -57,7 +57,7 @@ const MatchPage = (props) => {
             <h1>Astromatch</h1>
             <button onClick={props.onClickListButton}>Lista de matches</button>
             <div>
-                <img src={photoValue} width="400px" height="400px"/>
+                <img src={photoValue} alt="Foto de perfil" width="400px" height="400px"/>
                 <p>Nome: {nameValue}</p>
                 <p>Idade: {ageValue}</p>
                 <p>Descrição: {bioValue}</p>
