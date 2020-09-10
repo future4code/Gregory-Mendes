@@ -23,7 +23,7 @@ const App = () => {
       });
   };
 
-  const changePokeName = event => {
+  const handlePokeName = event => {
     setPokeName(event.target.value);
   };
 
