@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios'
 
-const MatchPage = () => {
+const MatchPage = (props) => {
+    
     return (
         <div>
             <h1>Astromatch</h1>
-            <button>Lista de matches</button>
+            <button onClick={props.onClickListButton}>Lista de matches</button>
             <div>
                 <img/>
                 <p>Nome:</p>

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios'
 
-const MatchesListPage = () => {
+const MatchesListPage = (props) => {
     return (
         <div>
-            <button>Voltar</button>
+            <button onClick={props.onClickBackButton}>Voltar</button>
             <h2>Seus matches</h2>
             <ul>
                 <li>

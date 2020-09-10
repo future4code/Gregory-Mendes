@@ -1,13 +1,41 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import MatchPage from './screens/MatchPage/MatchPage';
 import MatchesListPage from './screens/MatchesListPage/MatchesListPage';
 import { AppContainer } from './styled'
 
 const App = () => {
+  const [currentPage, setCurrentPage] = useState("match-page");
+
+  const changeToMatchPage = () => {
+    setCurrentPage("match-page")
+  }
+
+  const changeToMatchesListPage = () => {
+    setCurrentPage("matches-list-page")
+  }
+
+  const showCurrentPage = () => {
+    let page;
+    switch (currentPage) {
+      case "match-page":
+        page = <MatchPage onClickListButton={changeToMatchesListPage}/>
+        break;
+
+      case "matches-list-page":
+        page = <MatchesListPage onClickBackButton={changeToMatchPage}/>;
+        break;
+      
+      default:
+        page = <MatchPage onClickListButton={changeToMatchesListPage}/>;
+        break;
+    }
+
+    return page;
+  }
 
   return (
-    <AppContainer>
-      <MatchPage/>
+    <AppContainer >
+      {showCurrentPage()}
     </AppContainer>
   );
 }
