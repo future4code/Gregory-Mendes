@@ -42,7 +42,7 @@ const MatchPage = (props) => {
             };
         }
 
-        axios.post(choosePersonUrl, body, {headers:{'Content-Type': "application/json"}})
+        axios.post(choosePersonUrl, body)
         .then((response) => {
             getNewPersonProfile();
             console.log(response.data);

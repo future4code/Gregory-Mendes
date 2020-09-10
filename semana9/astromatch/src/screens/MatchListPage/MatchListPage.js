@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios'
-import { getMatchesUrl } from '../../constants/axiosConfig';
+import { getMatchesUrl, clearUrl } from '../../constants/axiosConfig';
 
 const MatchListPage = (props) => {
     const [matchList, setMatchList] = useState([]);
@@ -13,14 +13,21 @@ const MatchListPage = (props) => {
         axios.get(getMatchesUrl)
         .then((response) => {
             setMatchList(response.data.matches);
-            console.log(response.data)
         })
         .catch((error) => {
-            console.log(error.message)
+            window.alert("Ocorreu um erro na sua lista de matches. Tente acessar novamente.")
         })
     }
 
-    console.log(matchList)
+    const clearMatches = () => {
+        axios.put(clearUrl)
+        .then((response) => {
+            setMatchList([])
+        })
+        .catch((error) => {
+            window.alert("Ocorreu um erro ao tentar limpar seus matches. Tente novamente.")
+        })
+    }
 
     const showMatches = () => {
         const newMatchList = matchList.map((match) => {
@@ -42,7 +49,7 @@ const MatchListPage = (props) => {
             <ul>
                 {showMatches()}
             </ul>
-            <button>Limpar</button>
+            <button onClick={clearMatches}>Limpar</button>
         </div>
     )
 }
