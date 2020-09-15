@@ -4,9 +4,9 @@ const ApplicationFormPage = () => {
     
     return (
         <div>
-
+            <p>Application Form</p>
         </div>
     )
 }
 
-export default ApplicationFormPage
+export default ApplicationFormPage;
