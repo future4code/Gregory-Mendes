@@ -19,16 +19,16 @@ const Router = () => {
                 <Route exact path="/login">
                     <LoginPage />
                 </Route>
-                <Route exact path="/formulario-de-aplicacao">
+                <Route exact path="/application-form">
                     <ApplicationFormPage />
                 </Route>
-                <Route exact path="/viagens">
+                <Route exact path="/trips">
                     <TripsListPage />
                 </Route>
-                <Route exact path="/viagens/detalhes">
+                <Route exact path="/trips/details">
                     <TripDetailsPage />
                 </Route>
-                <Route exact path="/criar-nova-viagem">
+                <Route exact path="/create-new-trip">
                     <CreateTripPage />
                 </Route>
                 <Route>

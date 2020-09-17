@@ -3,15 +3,15 @@ export const goToHomePage = (history) => {
 };
 
 export const goToTripsListPage = (history) => {
-    history.push("/viagens");
+    history.push("/trips");
 };
 
 export const goToApplicationPage = (history) => {
-    history.push("/formulario-de-aplicacao");
+    history.push("/application-form");
 };
 
 export const goToCreateTripPage = (history) => {
-    history.push("/criar-nova-viagem")
+    history.push("/create-new-trip")
 };;
 
 export const goToLoginPage = (history) => {
@@ -19,6 +19,6 @@ export const goToLoginPage = (history) => {
 };
 
 export const goToTripDetailsPage = (history) => {
-    history.push("viagens/detalhes");
+    history.push("trips/details");
 };
 
