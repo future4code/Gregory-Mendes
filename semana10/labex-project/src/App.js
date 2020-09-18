@@ -1,14 +1,14 @@
 import React from 'react';
-import Router from './routers/Router'
-import AppBar from './components/AppBar';
+import Router from './routers/Router';
+import { AppContainer } from './styled';
 
 function App() {
   
   return (
-    <div>
+    <AppContainer>
       <Router />
-    </div>
+    </AppContainer>
   );
-}
+};
 
 export default App;

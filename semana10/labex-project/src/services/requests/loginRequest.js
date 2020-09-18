@@ -1,13 +1,13 @@
-import React from 'react'
-import axios from 'axios'
+import axios from 'axios';
 
-const baseLoginUrl = "https://us-central1-labenu-apis.cloudfunctions.net/labeX/gregory/login"
+const baseLoginUrl = "https://us-central1-labenu-apis.cloudfunctions.net/labeX/gregory-jackson/login"
 
 const handleLoginRequest = (userEmail, userPassword, history) => {
     const body = {
         email: userEmail,
         password: userPassword
     }
+    
     axios.post(baseLoginUrl, body)
     .then((response) => {
         window.localStorage.setItem("token", response.data.token)
@@ -15,7 +15,7 @@ const handleLoginRequest = (userEmail, userPassword, history) => {
     })
     .catch((error) => {
         console.log(error.message)
-    })
-}
+    });
+};
 
-export default handleLoginRequest
+export default handleLoginRequest;

@@ -6,7 +6,7 @@ const TripDetailsPage = () => {
         <div>
             <p>Trip Details</p>
         </div>
-    )
-}
+    );
+};
 
 export default TripDetailsPage;

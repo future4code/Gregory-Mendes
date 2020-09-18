@@ -1,10 +1,11 @@
-import React, {useState, useEffect} from 'react';
-import handleLoginRequest from '../../requests/postRequests/loginRequest';
+import React, {useEffect} from 'react';
+import handleLoginRequest from '../../services/requests/loginRequest';
 import { useHistory } from 'react-router-dom'
+import useInput from '../../hooks/useInput';
 
 const LoginPage = () => {
-    const [emailValue, setEmailValue] = useState("")
-    const [passwordValue, setPasswordValue] = useState("")
+    const [emailValue, handleEmailValue] = useInput();
+    const [passwordValue, handlePasswordValue] = useInput();
     const history = useHistory()
 
     useEffect(() => {
@@ -15,25 +16,23 @@ const LoginPage = () => {
         }
     }, [history])
     
-    const handleLogin = () => {
+    const handleLoginSubmit = () => {
         handleLoginRequest(emailValue, passwordValue, history);
-        setEmailValue("");
-        setPasswordValue("");
-    }
-
-    const handleEmailChange = (event) => {
-        setEmailValue(event.target.value);
-    }
-
-    const handlePasswordChange = (event) => {
-        setPasswordValue(event.target.value);
     }
 
     return (
         <div>
-            <input value={emailValue} onChange={handleEmailChange} placeholder="E-mail"/>
-            <input value={passwordValue} onChange={handlePasswordChange} placeholder="Senha"/>
-            <button onClick={handleLogin}>Entrar</button>
+            <input 
+                value={emailValue}
+                onChange={handleEmailValue}
+                placeholder="E-mail"
+            />
+            <input 
+                value={passwordValue}
+                onChange={handlePasswordValue}
+                placeholder="Senha"
+            />
+            <button onClick={handleLoginSubmit}>Entrar</button>
         </div>
     )
 }

@@ -1,12 +1,12 @@
-import React from 'react'
-import { BrowserRouter, Switch, Route } from "react-router-dom"
-import ApplicationFormPage from '../screens/ApplicationFormPage/ApplicationFormPage'
-import HomePage from '../screens/HomePage/HomePage'
-import LoginPage from '../screens/LoginPage/LoginPage'
-import TripDetailsPage from '../screens/TripDetailsPage/TripDetailsPage'
-import TripsListPage from '../screens/TripsListPage/TripsListPage'
-import AppBar from '../components/AppBar'
-import CreateTripPage from '../screens/CreateTripPage/CreateTripPage'
+import React from 'react';
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import ApplicationFormPage from '../screens/ApplicationFormPage/ApplicationFormPage';
+import HomePage from '../screens/HomePage/HomePage';
+import LoginPage from '../screens/LoginPage/LoginPage';
+import TripDetailsPage from '../screens/TripDetailsPage/TripDetailsPage';
+import TripsListPage from '../screens/TripsListPage/TripsListPage';
+import AppBar from '../components/AppBar/AppBar';
+import CreateTripPage from '../screens/CreateTripPage/CreateTripPage';
 
 const Router = () => {
     return (
@@ -36,7 +36,7 @@ const Router = () => {
                 </Route>
             </Switch>
         </BrowserRouter>
-    )
-}
+    );
+};
 
 export default Router

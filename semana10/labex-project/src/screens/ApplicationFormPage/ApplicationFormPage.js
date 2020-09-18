@@ -6,7 +6,7 @@ const ApplicationFormPage = () => {
         <div>
             <p>Application Form</p>
         </div>
-    )
-}
+    );
+};
 
 export default ApplicationFormPage;

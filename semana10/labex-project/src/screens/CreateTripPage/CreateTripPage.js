@@ -6,7 +6,7 @@ const CreateTripPage = () => {
         <div>
             <p>Create Trip</p>
         </div>
-    )
-}
+    );
+};
 
 export default CreateTripPage;
