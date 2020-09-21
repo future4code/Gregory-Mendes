@@ -1,9 +1,11 @@
 export function checaPalindromo(frase) {
+  frase.toLowerCase();
+
   return (
     frase ===
     frase
-      .split("")
-      .reverse()
-      .join("")
+    .split(`${/\W/}`)
+    .reverse()
+    .join("")
   );
 }
