@@ -1,11 +1,9 @@
 export function checaPalindromo(frase) {
-  frase.toLowerCase();
+  const regex = /[\W_]/g;
+  
+  const fraseMinúscula = frase.toLowerCase().replace(regex, "");
+  const fraseInvertida = fraseMinúscula.split("").reverse().join("");
 
-  return (
-    frase ===
-    frase
-    .split(`${/\W/}`)
-    .reverse()
-    .join("")
-  );
+  return fraseInvertida === fraseMinúscula;
 }
+

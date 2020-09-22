@@ -40,7 +40,7 @@ describe("Checa itens duplicados", () => {
 
     test("retorna true se o array conter 5, 7, 5, 87, 92, 5, 55, 5", () => {
         const resultado = checaItensDuplicados([5, 7, 87, 92, 5, 55, 5]);
-
+        
         expect(resultado).toEqual(true);
     });
 });
