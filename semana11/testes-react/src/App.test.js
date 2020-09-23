@@ -84,11 +84,26 @@ describe("Testing the functionalities of the Social Network", () => {
         createNewPost("randomTextAgain");
         createNewPost("justOtherRandomText");
         
-        const amount = getByText("Quantidade de posts");
+        const amount = getByText(/Quantidade de posts/);
 
-        expect(getAllByTestId("post-content").length).toEqual(2)
+        expect(getAllByTestId("post-content").length).toEqual(2);
         
         expect(amount).toHaveTextContent("Quantidade de posts: 2");
-    } )
+    });
+
+    test("The user cannot create a post if the input field is empty", () => {
+        const { getByText, queryByTestId, queryByText } = render(<App />);
+        
+        expect(queryByText(/O campo de texto está vazio/)).toBeNull();
+
+        createNewPost("");
+
+        expect(queryByTestId("post-content")).toBeNull();
+        getByText(/O campo de texto está vazio/);
+
+        createNewPost("nicePost");
+
+        expect(queryByText(/O campo de texto está vazio/)).toBeNull();
+    })
 
 })
