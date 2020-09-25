@@ -1,13 +1,14 @@
 import React from 'react'
 import { useForm } from '../../hooks/useForm'
 import { CreateTaskArea } from './create-task-styled'
+import { postTaskRequest } from '../../requests/requests'
 
 const CreateTask = () => {
     const [form, onChange, resetState] = useForm({
         taskName: "",
         selectDay: ""
     })
-
+    
     const handleInputChange = (event) => {
         const { name, value } = event.target;
 
@@ -17,7 +18,9 @@ const CreateTask = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        resetState()
+        postTaskRequest(form.taskName, form.selectDay);
+
+        resetState();
     }
 
     return (
@@ -26,7 +29,6 @@ const CreateTask = () => {
                 <input
                     name="taskName"
                     type="text"
-                    maxlength="15"
                     placeholder="Digite o nome da tarefa"
                     value={form.taskName}
                     onChange={handleInputChange}

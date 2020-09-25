@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { PlannerArea, DayArea } from './planner-days-styled'
+import { getTasksRequest } from '../../requests/requests'
 
 const PlannerDays = () => {
-
+    
     return (
         <PlannerArea>
             <DayArea>
