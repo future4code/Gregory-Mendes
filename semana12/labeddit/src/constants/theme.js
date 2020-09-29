@@ -1,7 +1,7 @@
 import { createMuiTheme } from '@material-ui/core';
 import { primaryColor, secondaryColor } from './colors';
 
-const theme = createMuiTheme ({
+const theme = createMuiTheme({
     pallete: {
         primary: {
             main: primaryColor,

@@ -25,7 +25,7 @@ const Router = () => {
                 <ErrorPage/>
             </Route>
         </Switch>
-    )
-}
+    );
+};
 
 export default Router;

@@ -4,13 +4,20 @@ import Router from './routes/Router';
 import Header from './components/AppBar/Header'
 import { ThemeProvider } from '@material-ui/core/styles';
 import theme from './constants/theme'
+import styled from 'styled-components'
+
+const InnerScreenContainer = styled.div`
+  padding-top: 70px;
+`
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <BrowserRouter>
         <Header/>
-        <Router/>
+        <InnerScreenContainer>
+          <Router/>
+        </InnerScreenContainer>
       </BrowserRouter>
     </ThemeProvider>
   );
