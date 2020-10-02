@@ -1,29 +1,40 @@
 import { Button, TextField } from '@material-ui/core';
 import React from 'react';
 import useForm from '../../hooks/useForm';
-import { FormInputs, LoginFormContainer } from './styled-login-page';
+import { SignUpFormInputs, SignUpFormContainer } from './styled-signup-page';
 import { useHistory } from 'react-router-dom';
-import { loginRequest } from '../../services/userRequests';
+import { signupRequest } from '../../services/userRequests';
 
-const LoginForm = () => {
-    const [form, handleInputChange] = useForm({email: "", password: ""});
+const SignUpForm = () => {
+    const [form, handleInputChange] = useForm({email: "", password: "", username: ""});
     const history = useHistory();
 
-    const onClickLogin = (event) => {
+    const onClickSignUp = (event) => {
         event.preventDefault();
-        const element = document.getElementById("login-form");
+        const element = document.getElementById("signup-form");
         const isValid = element.checkValidity();
         element.reportValidity();
-        
         if (isValid) {
-            loginRequest(form, history);
+            signupRequest(form, history);
         }
     }
 
     return (
-        <form id="login-form">
-            <LoginFormContainer>
-                <FormInputs>
+        <form id="signup-form">
+            <SignUpFormContainer>
+                <SignUpFormInputs>
+                    <TextField
+                        value={form.username}
+                        name={"username"}
+                        onChange={handleInputChange}
+                        label={"Nome"}
+                        variant={"outlined"}
+                        type={"text"}
+                        fullWidth
+                        required
+                        margin={"normal"}
+                    >   
+                    </TextField>
                     <TextField
                         value={form.email}
                         name={"email"}
@@ -43,25 +54,25 @@ const LoginForm = () => {
                         onChange={handleInputChange}
                         label={"Senha"}
                         variant={"outlined"}
-                        type={"password"}
+                        type={"text"}
                         fullWidth
                         required
                         margin={"normal"}
                     >   
                     </TextField>
-                </FormInputs>
+                </SignUpFormInputs>
                 <Button
-                    onClick={onClickLogin}
+                    onClick={onClickSignUp}
                     color={"primary"}
                     variant={"contained"}
                     type={"submit"}
                     fullWidth
                 >
-                    Entrar
+                    Cadastrar
                 </Button>
-            </LoginFormContainer>
+            </SignUpFormContainer>
         </form>
     );
 };
 
-export default LoginForm;
+export default SignUpForm;
