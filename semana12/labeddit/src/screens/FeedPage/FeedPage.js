@@ -1,45 +1,29 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import { BASE_URL } from '../../constants/urls';
-import { Card, CardHeader } from '@material-ui/core';
+import React from 'react';
+import { Card, CardContent, Typography } from '@material-ui/core';
+import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
+import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
+import useRequestData from '../../hooks/useRequestData';
 
 const FeedPage = () => {
-    const [posts, setPosts] = useState([]);
+    const posts = useRequestData([], "/posts");
 
-    useEffect(() => {
-        getPosts();
-    }, [posts]);
-
-    const getPosts = () => {
-        axios.get(`${BASE_URL}/posts`, {
-            headers: {
-                Authorization: localStorage.getItem("token")
-        }})
-        .then((response) => {
-            console.log(response.data);
-            setPosts(response.data.posts);
+    const showPosts = () => (
+        posts.map((post) => {
+            return (
+                <Card key={post.id}>
+                    <CardContent >
+                        <Typography>{post.username}</Typography>
+                        <Typography>{post.title}</Typography>
+                        <Typography>{post.text}</Typography>
+                        <ArrowUpwardIcon></ArrowUpwardIcon>
+                        <Typography>{post.votesCount}</Typography>
+                        <ArrowDownwardIcon></ArrowDownwardIcon>
+                        <Typography>{post.commentsCount} comentários</Typography>
+                    </CardContent>
+                </Card>
+            )
         })
-        .catch((error) => {
-            console.log("Ocorreu um erro na exibição dos posts. Tente novamente.")
-        });
-    };
-
-    const showPosts = posts.map((post) => {
-        return (
-            <Card key={post.id}>
-                <CardHeader
-                    title={post.title}
-                />
-                    
-                    {post.username}
-                <p>{post.title}</p>
-                <p>{post.text}</p>
-                <button>positivo</button>
-                <button>negativo</button>
-                <p>{post.commentsCount} comentários</p> 
-            </Card>
-        )
-    });
+    );
     
     return (
         <div>
@@ -47,7 +31,7 @@ const FeedPage = () => {
                 <input placeholder="Escreva algo para postar"></input>
                 <button>Postar</button>
             </div>
-            {showPosts}
+            {showPosts()}
         </div>
     )
 };
