@@ -18,7 +18,7 @@ const Router = () => {
             <Route exact path={["/feed-de-posts", "/"]}>
                 <FeedPage/>
             </Route>
-            <Route exact path={"/posts/:id"}>
+            <Route exact path={"/post/:id"}>
                 <PostsPage/>
             </Route>
             <Route>

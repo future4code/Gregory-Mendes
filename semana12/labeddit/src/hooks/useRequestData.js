@@ -11,6 +11,7 @@ const useRequestData = (initialState, endpoint) => {
                 Authorization: localStorage.getItem("token")
         }})
         .then((response) => {
+            console.log(response.data)
             setData(response.data.posts);
         })
         .catch((error) => {
@@ -18,7 +19,7 @@ const useRequestData = (initialState, endpoint) => {
         });
     }, [endpoint]);
 
-    return (data);
+    return data;
 };
 
 export default useRequestData;

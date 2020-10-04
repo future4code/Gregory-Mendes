@@ -23,3 +23,17 @@ export const signupRequest = (body, history) => {
         console.log("Ocorreu um erro ao tentar fazer o cadastro. Tente novamente.")
     });
 };
+
+export const createPostRequest = (body) => {
+    axios.post(`${BASE_URL}/posts`, body, {
+        headers: {
+            Authorization: localStorage.getItem("token")
+        }
+    })
+    .then((response) => {
+        window.alert("Seu post foi criado com sucesso");  
+    })
+    .catch((error) => {
+        console.log("Ocorreu um erro ao tentar criar um post. Tente novamente.")
+    });
+};

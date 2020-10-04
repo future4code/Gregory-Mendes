@@ -1,38 +1,47 @@
 import React from 'react';
-import { Card, CardContent, Typography } from '@material-ui/core';
 import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
 import useRequestData from '../../hooks/useRequestData';
+import { PostContainer, PostsMainContainer, PostTextArea, PostBottomArea, VoteArea } from './styled-feed-page';
+import { useHistory } from 'react-router-dom';
+import { goToPostPage } from '../../routes/Coordinator';
+import FeedPageForm from './FeedPageForm';
 
 const FeedPage = () => {
-    const posts = useRequestData([], "/posts");
+    const posts = useRequestData([], "/posts"); 
+    const history = useHistory();
 
     const showPosts = () => (
         posts.map((post) => {
             return (
-                <Card key={post.id}>
-                    <CardContent >
-                        <Typography>{post.username}</Typography>
-                        <Typography>{post.title}</Typography>
-                        <Typography>{post.text}</Typography>
-                        <ArrowUpwardIcon></ArrowUpwardIcon>
-                        <Typography>{post.votesCount}</Typography>
-                        <ArrowDownwardIcon></ArrowDownwardIcon>
-                        <Typography>{post.commentsCount} comentários</Typography>
-                    </CardContent>
-                </Card>
-            )
+                <PostContainer 
+                    key={post.id}
+                    onClick={() => goToPostPage(history, post.id)}
+                >
+                    <p>{post.username}</p>
+                    <PostTextArea>
+                        <p>{post.text}</p>
+                    </PostTextArea>
+                    <PostBottomArea>
+                        <VoteArea>
+                            <ArrowUpwardIcon/>
+                            <p>{post.votesCount}</p>
+                            <ArrowDownwardIcon/>
+                        </VoteArea>
+                        <p>{post.commentsCount} comentários</p>
+                    </PostBottomArea>
+                </PostContainer>
+            );
         })
     );
     
     return (
-        <div>
+        <PostsMainContainer>
+            {FeedPageForm()}
             <div>
-                <input placeholder="Escreva algo para postar"></input>
-                <button>Postar</button>
+                {showPosts()}
             </div>
-            {showPosts()}
-        </div>
+        </PostsMainContainer>
     )
 };
 
