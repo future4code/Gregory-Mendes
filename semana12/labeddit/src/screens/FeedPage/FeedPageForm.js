@@ -1,3 +1,4 @@
+import { Button, TextField } from '@material-ui/core';
 import React from 'react';
 import useForm from '../../hooks/useForm';
 import { createPostRequest } from '../../services/userRequests';
@@ -18,9 +19,21 @@ const FeedPageForm = () => {
     
     return (
         <form id={"create-post-form"}>
-            <input onChange={handleInputChange} placeholder="Título"></input>
-            <input onChange={handleInputChange} placeholder="Texto do seu post"></input>
-            <button onClick={onClickCreatePost}>Criar post</button>
+            <TextField 
+                name={"title"}
+                onChange={handleInputChange}
+                value={form.title}
+                variant={"outlined"}
+                placeholder="Título"
+            />
+            <TextField
+                name={"text"}
+                onChange={handleInputChange}
+                value={form.text}
+                variant={"outlined"}
+                placeholder="Texto do seu post"
+            />
+            <Button variant={"contained"} color={"primary"} onClick={onClickCreatePost}>Criar post</Button>
         </form>
     );
 };
