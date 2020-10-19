@@ -1,22 +1,17 @@
-var fs = require("fs");
-const tasksList = require("./tasksList");
-var data = tasksList;
-
-/* var tasksList = require("./tasksList") */
-
+const fs = require("fs");
 const userTask = process.argv[2];
-/* const tasksList = ["Fazer pipoca", "Pular corda"]; */
 
 const showTasks = (task) => {
-    fs.writeFile("./tasksList.js", data, function(error) {
+    var data = `${task}\n`
+    
+    fs.appendFileSync("./tasksList.txt", data, function(error) {
         if (error) {
             console.log("Ocorreu um erro. Tente novamente.");
         }
-
-        tasksList.push([...tasksList, task])
     });
     
-    return console.log(tasksList);
+    const content = fs.readFileSync("./tasksList.txt")
+    return console.log(content.toString());
 };
 
 showTasks(userTask);
