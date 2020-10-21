@@ -12,14 +12,24 @@ app.get("/countries/All", (req: Request, res: Response) => {
         return {
             id: country.id,
             name: country.name
-        }
-    })
-    
+        };
+    });
+
     res.status(200).send(result);
 });
 
+app.get("/countries/:id", (req: Request, res: Response) => {
+    const result: country | undefined = countries.find((country) =>
+        country.id === Number(req.params.id)
+    );
 
+    if (result) {
+        res.status(200).send(result);
+    } else {
+        res.status(404).send("Not found");
+    };
+});
 
 app.listen(3004, () => {
     console.log("Servidor pronto!");
-})
+});
