@@ -4,6 +4,7 @@ import knex from 'knex';
 import dotenv from 'dotenv';
 import { User } from './types';
 import { createUser } from './endpoints/createUser';
+import { getAllUsers } from './endpoints/getAllUsers';
 
 dotenv.config();
 
@@ -26,6 +27,8 @@ app.use(cors());
 export const users: User[] = []
 
 app.post("/user", createUser);
+
+app.get("/user/all", getAllUsers);
 
 const server = app.listen(process.env.PORT || 3003, () => {
     if (server) {
