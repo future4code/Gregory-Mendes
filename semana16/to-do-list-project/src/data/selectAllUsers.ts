@@ -7,6 +7,8 @@ export async function selectAllUsers(): Promise<User[]> {
         .select("*")
         .from("ToDoListUser");
 
+        // console.log(result)
+
         return result;
     } catch (error) {
         return [];

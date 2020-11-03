@@ -12,8 +12,8 @@ export async function createNewUser(
             nickname,
             email
         })
-        .into("ToDoListUser")
-
+        .into("ToDoListUser");
+        
         console.log("Usuário criado com sucesso");
     } catch (error) {
         console.log(error);

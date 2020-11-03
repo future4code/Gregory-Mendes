@@ -6,6 +6,7 @@ export const getAllUsers = async (req: Request, res: Response) => {
     try {
         const users: User[] = await selectAllUsers();
 
+        console.log(users);
         if (!users.length) {
             res.statusCode = 404
             throw new Error("Usuários não encontrados.");
