@@ -3,7 +3,9 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import knex from 'knex';
 import { getAllUsers } from './endpoints/getAllUsers';
-import { searchUsersByName, searchUsersByType } from './endpoints/searchUsersByName';
+import { searchUserByName } from './endpoints/searchUserByName';
+import { searchUserByType } from './endpoints/searchUserByType';
+import { getUsersByOrder } from './endpoints/getUsersByOrder';
 
 dotenv.config();
 
@@ -24,8 +26,9 @@ app.use(express.json());
 app.use(cors());
 
 app.get("/users/all", getAllUsers)
-app.get("/users/search", searchUsersByName)
-app.get("/users/:type", searchUsersByType)
+app.get("/users/search", searchUserByName)
+app.get("/users/searchByType/:type", searchUserByType)
+app.get("/users/order", getUsersByOrder)
 
 const server = app.listen(process.env.PORT || 3003, () => {
     if (server) {
