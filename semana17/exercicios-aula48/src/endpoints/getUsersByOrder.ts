@@ -9,7 +9,8 @@ export const getUsersByOrder = async(req: Request, res: Response): Promise<void>
             name: req.query.name as string || `${"a"}%`,
             type: req.query.type as USER_TYPE,
             orderBy: req.query.orderBy as string || "name",
-            orderType: (req.query.orderType as string).toUpperCase() || "ASC"
+            orderType: (req.query.orderType as string).toUpperCase() || "ASC",
+            page: Number(req.query.page) <= 0 ? 1 : Number(req.query.page) || 1
         };
 
         const validOrderByValues = ["name", "type"];

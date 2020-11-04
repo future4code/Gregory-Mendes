@@ -15,4 +15,5 @@ export type InputData = {
     type: USER_TYPE,
     orderBy: string
     orderType: string
+    page: number
 };

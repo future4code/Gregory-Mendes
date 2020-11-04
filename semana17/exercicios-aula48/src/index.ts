@@ -6,6 +6,7 @@ import { getAllUsers } from './endpoints/getAllUsers';
 import { searchUserByName } from './endpoints/searchUserByName';
 import { searchUserByType } from './endpoints/searchUserByType';
 import { getUsersByOrder } from './endpoints/getUsersByOrder';
+import { getFiveUsers } from './endpoints/getFiveUsers';
 
 dotenv.config();
 
@@ -25,10 +26,11 @@ const app: Express = express();
 app.use(express.json());
 app.use(cors());
 
-app.get("/users/all", getAllUsers)
-app.get("/users/search", searchUserByName)
-app.get("/users/searchByType/:type", searchUserByType)
-app.get("/users/order", getUsersByOrder)
+app.get("/users/all", getAllUsers);
+app.get("/users/search", searchUserByName);
+app.get("/users/searchByType/:type", searchUserByType);
+app.get("/users/order", getUsersByOrder);
+app.get("/users/limit", getFiveUsers);
 
 const server = app.listen(process.env.PORT || 3003, () => {
     if (server) {

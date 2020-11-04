@@ -8,7 +8,8 @@ export const searchUserByType = async (req: Request, res: Response): Promise<voi
             name: req.query.name as string,
             type: req.params.type  as USER_TYPE,
             orderBy: req.query.orderBy as string,
-            orderType: req.query.orderType as string
+            orderType: req.query.orderType as string,
+            page: Number(req.query.page) <= 0 ? 1 : Number(req.query.page) || 1
         };
 
         if (!data.type) {
