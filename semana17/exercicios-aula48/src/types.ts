@@ -13,5 +13,6 @@ export type User = {
 export type InputData = {
     name: string,
     type: USER_TYPE,
-    orderby: string
+    orderBy: string
+    orderType: string
 };

@@ -7,7 +7,9 @@ export const searchUserByName = async (req: Request, res: Response): Promise<voi
     try {
         const data: InputData = {
             name: req.query.name as string,
-            type: (req.query.type as USER_TYPE)
+            type: (req.query.type as USER_TYPE),
+            orderBy: req.query.orderBy as string,
+            orderType: req.query.orderType as string
         };
 
         if (!data.name) {
