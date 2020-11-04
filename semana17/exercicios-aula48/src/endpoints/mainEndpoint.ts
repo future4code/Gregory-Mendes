@@ -1,15 +1,14 @@
 import { Request, Response } from 'express';
-import orderUsers from '../data/orderUsers';
+import { mainFunctionalities } from '../data/mainFunctionalities';
 import { InputData, USER_TYPE } from '../types';
 
-
-export const getUsersByOrder = async(req: Request, res: Response): Promise<void> =>{
+export const mainEndpoint = async(req: Request, res: Response): Promise<void> =>{
     try {
         const data: InputData = {
-            name: req.query.name as string || `${"a"}%`,
+            name: req.query.name as string,
             type: req.query.type as USER_TYPE,
             orderBy: req.query.orderBy as string || "name",
-            orderType: (req.query.orderType as string).toUpperCase() || "ASC",
+            orderType: (req.query.orderType as string).toUpperCase() || "DESC",
             page: Number(req.query.page) <= 0 ? 1 : Number(req.query.page) || 1
         };
 
@@ -25,7 +24,7 @@ export const getUsersByOrder = async(req: Request, res: Response): Promise<void>
             throw new Error("Os valores de 'orderType' devem ser 'ASC' ou 'DESC'");
         };
 
-        const users = await orderUsers(data);
+        const users = await mainFunctionalities(data)
 
         if(!users.length){
             res.statusCode = 404

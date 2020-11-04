@@ -7,6 +7,7 @@ import { searchUserByName } from './endpoints/searchUserByName';
 import { searchUserByType } from './endpoints/searchUserByType';
 import { getUsersByOrder } from './endpoints/getUsersByOrder';
 import { getFiveUsers } from './endpoints/getFiveUsers';
+import { mainEndpoint } from './endpoints/mainEndpoint';
 
 dotenv.config();
 
@@ -31,6 +32,7 @@ app.get("/users/search", searchUserByName);
 app.get("/users/searchByType/:type", searchUserByType);
 app.get("/users/order", getUsersByOrder);
 app.get("/users/limit", getFiveUsers);
+app.get("/users/main", mainEndpoint);
 
 const server = app.listen(process.env.PORT || 3003, () => {
     if (server) {
