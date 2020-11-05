@@ -1,5 +1,4 @@
 import { Request, Response } from 'express';
-import { send } from 'process';
 import { selectUserById } from '../data/selectUserById';
 import { User } from '../types'
 

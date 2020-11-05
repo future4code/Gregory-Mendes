@@ -6,6 +6,8 @@ import { createUser } from './endpoints/createUser';
 import { getAllUsers } from './endpoints/getAllUsers';
 import { getUserById } from './endpoints/getUserById';
 import { createTask } from './endpoints/createTask';
+import { getTaskById } from './endpoints/getTaskById';
+import { editUser } from './endpoints/editUsers';
 
 dotenv.config();
 
@@ -30,6 +32,9 @@ app.post("/task", createTask);
 
 app.get("/user/all", getAllUsers);
 app.get("/user/:id", getUserById);
+app.get("/task/:id", getTaskById);
+
+app.put("/user/edit/:id", editUser)
 
 const server = app.listen(process.env.PORT || 3003, () => {
     if (server) {
