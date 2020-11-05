@@ -1,7 +1,6 @@
 import { Request, Response } from 'express';
 import { createNewUser } from '../data/createNewUser';
 import { User } from '../types';
-import { users } from '../index'
 import { selectAllUsers } from '../data/selectAllUsers';
 
 export const createUser = async (req: Request, res: Response): Promise<void> => {

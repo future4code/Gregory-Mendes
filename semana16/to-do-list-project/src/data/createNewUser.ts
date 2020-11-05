@@ -14,7 +14,6 @@ export async function createNewUser(
         })
         .into("ToDoListUser");
         
-        console.log("Usuário criado com sucesso");
     } catch (error) {
         console.log(error);
     };

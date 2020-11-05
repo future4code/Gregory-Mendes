@@ -2,10 +2,10 @@ import express, { Express } from 'express';
 import cors from 'cors';
 import knex from 'knex';
 import dotenv from 'dotenv';
-import { User } from './types';
 import { createUser } from './endpoints/createUser';
 import { getAllUsers } from './endpoints/getAllUsers';
 import { getUserById } from './endpoints/getUserById';
+import { createTask } from './endpoints/createTask';
 
 dotenv.config();
 
@@ -25,9 +25,8 @@ const app: Express = express();
 app.use(express.json());
 app.use(cors());
 
-export const users: User[] = []
-
 app.post("/user", createUser);
+app.post("/task", createTask);
 
 app.get("/user/all", getAllUsers);
 app.get("/user/:id", getUserById);

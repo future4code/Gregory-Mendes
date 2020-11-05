@@ -4,3 +4,10 @@ export type User = {
     email: string,
 };
 
+export type Task = {
+    title: string,
+    description: string,
+    limitDate: string,
+    creatorUserId: string
+};
+
