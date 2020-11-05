@@ -1,11 +1,12 @@
 import { connection } from '../index';
-import { User } from '../types'
+import { User } from '../types';
 
-export async function selectAllUsers(): Promise<User[]> {
+export async function selectUserById(id: string): Promise<User[]> {
     try {
         const result = await connection
         .select("*")
-        .from("ToDoListUser");
+        .from("ToDoListUser")
+        .where("id", "LIKE", `${id}`)
 
         return result;
     } catch (error) {

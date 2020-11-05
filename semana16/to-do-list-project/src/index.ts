@@ -5,6 +5,7 @@ import dotenv from 'dotenv';
 import { User } from './types';
 import { createUser } from './endpoints/createUser';
 import { getAllUsers } from './endpoints/getAllUsers';
+import { getUserById } from './endpoints/getUserById';
 
 dotenv.config();
 
@@ -29,6 +30,7 @@ export const users: User[] = []
 app.post("/user", createUser);
 
 app.get("/user/all", getAllUsers);
+app.get("/user/:id", getUserById);
 
 const server = app.listen(process.env.PORT || 3003, () => {
     if (server) {
