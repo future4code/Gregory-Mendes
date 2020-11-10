@@ -4,7 +4,8 @@ import knex from "knex";
 import dotenv from 'dotenv';
 import login from './endpoints/login';
 import signUp from './endpoints/signup';
-import { getUserById } from './endpoints/getUserById';
+import { getUserByIdAuth } from './endpoints/getUserByIdAuth';
+import { deleteUser } from './endpoints/deleteUser';
 
 dotenv.config();
 
@@ -27,7 +28,9 @@ app.use(cors());
 app.post("/signup", signUp);
 app.post("/login", login);
 
-app.get("/user/profile", getUserById);
+app.get("/user/profile", getUserByIdAuth);
+
+app.delete("/user/:id", deleteUser);
 
 const server = app.listen(process.env.PORT || 3003, () => {
     if (server) {

@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import { selectUserById } from "../data/selectUserById";
 import { AuthenticationData, getTokenData } from "../services/authenticator";
 
-export async function getUserById(req: Request, res: Response): Promise<any> {
+export async function getUserByIdAuth(req: Request, res: Response): Promise<any> {
     try {
         const token = req.headers.authorization as string;
         const tokenData: AuthenticationData = getTokenData(token);
