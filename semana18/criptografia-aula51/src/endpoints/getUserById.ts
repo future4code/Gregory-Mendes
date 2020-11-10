@@ -7,11 +7,17 @@ export async function getUserById(req: Request, res: Response): Promise<any> {
         const token = req.headers.authorization as string;
         const tokenData: AuthenticationData = getTokenData(token);
 
+        if (tokenData.role !== "NORMAL") {
+            res.statusCode = 401;
+            throw new Error("Não autorizado");
+        }
+
         const user = await selectUserById(tokenData.id);
 
         res.send({
             id: user.id,
-            email: user.email
+            email: user.email,
+            role: tokenData.role
         });
     } catch (error) {
         let { message } = error;
