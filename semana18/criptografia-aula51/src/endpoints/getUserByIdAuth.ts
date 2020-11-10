@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { selectUserById } from "../data/selectUserById";
+import { selectUserByIdAuth } from "../data/selectUserByIdAuth";
 import { AuthenticationData, getTokenData } from "../services/authenticator";
 
 export async function getUserByIdAuth(req: Request, res: Response): Promise<any> {
@@ -12,7 +12,7 @@ export async function getUserByIdAuth(req: Request, res: Response): Promise<any>
             throw new Error("Não autorizado");
         }
 
-        const user = await selectUserById(tokenData.id);
+        const user = await selectUserByIdAuth(tokenData.id);
 
         res.send({
             id: user.id,
