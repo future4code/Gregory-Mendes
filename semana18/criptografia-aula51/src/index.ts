@@ -6,6 +6,7 @@ import login from './endpoints/login';
 import signUp from './endpoints/signup';
 import { getUserByIdAuth } from './endpoints/getUserByIdAuth';
 import { deleteUser } from './endpoints/deleteUser';
+import { getUserById } from './endpoints/getUserById';
 
 dotenv.config();
 
@@ -29,6 +30,7 @@ app.post("/signup", signUp);
 app.post("/login", login);
 
 app.get("/user/profile", getUserByIdAuth);
+app.get("/user/:id", getUserById);
 
 app.delete("/user/:id", deleteUser);
 
