@@ -2,6 +2,9 @@ import express, { Express } from 'express';
 import cors from 'cors';
 import knex from "knex";
 import dotenv from 'dotenv';
+import login from './endpoints/login';
+import signUp from './endpoints/signup';
+import { getUserById } from './endpoints/getUserById';
 
 dotenv.config();
 
@@ -20,6 +23,11 @@ const app: Express = express();
 
 app.use(express.json());
 app.use(cors());
+
+app.post("/signup", signUp);
+app.post("/login", login);
+
+app.get("/user/profile", getUserById);
 
 const server = app.listen(process.env.PORT || 3003, () => {
     if (server) {
