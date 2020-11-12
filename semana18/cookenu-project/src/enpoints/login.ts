@@ -40,9 +40,15 @@ export const login = async (req: Request, res: Response): Promise<void> => {
     } catch (error) {
         let { message } = error;
 
-        if (message === "Cannot read property 'id' of undefined") {
-            res.statusCode = 406
-        }
-        res.send({message: error.message})
+        if (
+            message === "invalid signature" ||
+            message === "jwt must be provided" ||
+            message === "jwt expired"
+        ) {
+            res.statusCode = 401;
+            message = "Não autorizado";
+        };
+
+        res.send({message});
     };
 };

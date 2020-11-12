@@ -4,6 +4,7 @@ import knex from 'knex';
 import dotenv from 'dotenv';
 import { signup } from './enpoints/signup';
 import { login } from './enpoints/login';
+import { getProfile } from './enpoints/getProfile';
 
 dotenv.config();
 
@@ -25,6 +26,8 @@ app.use(cors());
 
 app.post("/signup", signup);
 app.post("/login", login);
+
+app.get("/user/profile", getProfile);
 
 const server = app.listen(3003, () => {
     if (server) {
