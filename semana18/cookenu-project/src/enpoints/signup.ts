@@ -14,13 +14,13 @@ export const signup = async (req: Request, res: Response): Promise<void> => {
         let message = "Usuário criado com sucesso!"
 
         if (!name || !email || !password) {
-            res.statusCode = 400;
+            res.statusCode = 406;
             message = "Por favor, preencha os campos 'name', 'email' e 'password'.";
             throw new Error(message);
         };
 
         if (password.length < 6) {
-            res.statusCode = 400;
+            res.statusCode = 406;
             message = "A senha deve possuir mais que 6 caracteres.";
             throw new Error(message);
         };
