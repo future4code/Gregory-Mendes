@@ -5,6 +5,7 @@ import dotenv from 'dotenv';
 import { signup } from './enpoints/signup';
 import { login } from './enpoints/login';
 import { getProfile } from './enpoints/getProfile';
+import { getProfileById } from './enpoints/getProfileById';
 
 dotenv.config();
 
@@ -28,6 +29,7 @@ app.post("/signup", signup);
 app.post("/login", login);
 
 app.get("/user/profile", getProfile);
+app.get("/user/:id", getProfileById);
 
 const server = app.listen(3003, () => {
     if (server) {

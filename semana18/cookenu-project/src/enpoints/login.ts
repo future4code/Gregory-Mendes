@@ -40,15 +40,11 @@ export const login = async (req: Request, res: Response): Promise<void> => {
     } catch (error) {
         let { message } = error;
 
-        if (
-            message === "invalid signature" ||
-            message === "jwt must be provided" ||
-            message === "jwt expired"
-        ) {
-            res.statusCode = 401;
-            message = "Não autorizado";
+        if (message === "Cannot read property 'id' of undefined") {
+            res.statusCode = 404;
+            message = "Usuário não encontrado";
         };
-
+        
         res.send({message});
     };
 };
