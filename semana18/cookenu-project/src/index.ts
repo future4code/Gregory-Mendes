@@ -6,6 +6,7 @@ import { signup } from './enpoints/signup';
 import { login } from './enpoints/login';
 import { getProfile } from './enpoints/getProfile';
 import { getProfileById } from './enpoints/getProfileById';
+import { createRecipe } from './enpoints/createRecipe';
 
 dotenv.config();
 
@@ -27,6 +28,7 @@ app.use(cors());
 
 app.post("/signup", signup);
 app.post("/login", login);
+app.post("/recipe", createRecipe);
 
 app.get("/user/profile", getProfile);
 app.get("/user/:id", getProfileById);
