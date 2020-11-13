@@ -7,6 +7,7 @@ import { login } from './enpoints/login';
 import { getProfile } from './enpoints/getProfile';
 import { getProfileById } from './enpoints/getProfileById';
 import { createRecipe } from './enpoints/createRecipe';
+import { getRecipeById } from './enpoints/getRecipeById';
 
 dotenv.config();
 
@@ -32,6 +33,7 @@ app.post("/recipe", createRecipe);
 
 app.get("/user/profile", getProfile);
 app.get("/user/:id", getProfileById);
+app.get("/recipe/:id", getRecipeById);
 
 const server = app.listen(3003, () => {
     if (server) {
