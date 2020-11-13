@@ -8,6 +8,7 @@ import { getProfile } from './enpoints/getProfile';
 import { getProfileById } from './enpoints/getProfileById';
 import { createRecipe } from './enpoints/createRecipe';
 import { getRecipeById } from './enpoints/getRecipeById';
+import { getRecipeFeed } from './enpoints/getRecipeFeed';
 
 dotenv.config();
 
@@ -29,7 +30,8 @@ app.use(cors());
 
 app.post("/signup", signup);
 app.post("/login", login);
-app.post("/recipe", createRecipe);
+app.post("/recipe", createRecipe); 
+app.post("/user/feed", getRecipeFeed); 
 
 app.get("/user/profile", getProfile);
 app.get("/user/:id", getProfileById);
