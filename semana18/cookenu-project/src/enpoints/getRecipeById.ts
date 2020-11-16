@@ -5,11 +5,6 @@ export const getRecipeById = async (req: Request, res: Response): Promise<void> 
     try {
         const id = req.params.id;
         const token = req.headers.authorization as string;
-        
-        if (!id) {
-            res.statusCode = 406;
-            throw new Error("Por favor, insira o id da receita.");
-        };
 
         if (!token) {
             res.statusCode = 401;
@@ -41,7 +36,8 @@ export const getRecipeById = async (req: Request, res: Response): Promise<void> 
         ) {
             res.statusCode = 401;
             message = "Não autorizado.";
-        }
+        };
+
         res.send({message: error.message});
     };
 };

@@ -9,6 +9,7 @@ import { getProfileById } from './enpoints/getProfileById';
 import { createRecipe } from './enpoints/createRecipe';
 import { getRecipeById } from './enpoints/getRecipeById';
 import { getRecipeFeed } from './enpoints/getRecipeFeed';
+import { editRecipe } from './enpoints/editRecipe';
 
 dotenv.config();
 
@@ -32,6 +33,8 @@ app.post("/signup", signup);
 app.post("/login", login);
 app.post("/recipe", createRecipe); 
 app.post("/user/feed", getRecipeFeed); 
+
+app.put("/recipe/edit/:id", editRecipe); 
 
 app.get("/user/profile", getProfile);
 app.get("/user/:id", getProfileById);
