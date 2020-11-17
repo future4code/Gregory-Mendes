@@ -20,3 +20,8 @@ export const insertUser = async (
         throw new Error(error.message || error.sqlMessage);
     };
 };
+
+export enum USER_ROLES {
+    NORMAL = "NORMAL",
+    ADMIN = "ADMIN"
+};

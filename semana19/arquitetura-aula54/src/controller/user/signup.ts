@@ -1,4 +1,5 @@
 import { Request, Response } from "express";
+import { createUserBusiness } from "../../business/user/createUserBusiness";
 
 export const signup = async (req: Request, res: Response): Promise<void> => {
     try {
@@ -18,6 +19,6 @@ export const signup = async (req: Request, res: Response): Promise<void> => {
                 token
             })
     } catch (error) {
-        
-    }
-}
+        throw new Error(error.message);
+    };
+};
