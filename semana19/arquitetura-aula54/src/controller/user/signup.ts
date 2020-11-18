@@ -7,10 +7,10 @@ export const signup = async (req: Request, res: Response): Promise<void> => {
             name: req.body.name,
             email: req.body.email,
             password: req.body.password,
-            role: req.body.role,
+            role: req.body.role.toUpperCase(),
         };
 
-        const token = createUserBusiness(input);
+        const token = await createUserBusiness(input);
 
         res
             .status(201)
@@ -19,6 +19,6 @@ export const signup = async (req: Request, res: Response): Promise<void> => {
                 token
             })
     } catch (error) {
-        throw new Error(error.message);
+        res.status(406).send(error.message);
     };
 };

@@ -1,12 +1,10 @@
-import { Response } from 'express';
 import { insertUser } from '../../data/insertUser';
 import { generateToken } from '../../services/authenticator';
 import { hash } from '../../services/hashManager'
 import { generateId } from '../../services/idGenerator';
 
-export const createUserBusiness = async (user: any): Promise<string> => {
+export const createUserBusiness = async (user: any): Promise<any> => {
     try {
-
         if (!user.name || !user.email || !user.password || !user.role) {
             throw new Error("Preencha todos os campos.");
         };
@@ -23,11 +21,15 @@ export const createUserBusiness = async (user: any): Promise<string> => {
         const cypherPassword = await hash(user.password);
 
         await insertUser(id, user.email, user.name, cypherPassword, user.role);
-
-        const token = generateToken({id, role: user.role});
-
-        return token;
+        
+        const token: string = generateToken({id, role: user.role});
+        
+        return {
+            id,
+            role: user.role,
+            token
+        };
     } catch (error) {
-        throw new Error( error.message || "Erro ao tentar criar usuário.");
+        throw new Error(error.message);
     };
 };

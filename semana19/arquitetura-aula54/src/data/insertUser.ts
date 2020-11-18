@@ -5,7 +5,7 @@ export const insertUser = async (
     email: string,
     name: string,
     password: string,
-    role: string
+    role: USER_ROLES
 ): Promise<void> => {
     try {
         await connection("User_Arq")
