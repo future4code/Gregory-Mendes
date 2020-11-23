@@ -109,4 +109,4 @@ c. `INSERT INTO Oscar VALUES`
 `("Melhor fotografia", "2020-07-27", "004");`
 
 d.`SELECT m.name as movie_name, o.oscar_name, o.oscar_date FROM Movies m`
-`LEFT JOIN Oscar o ON m.id = o.movie_id;`
+`LEFT JOIN Oscar o ON m.id = o.movie_id;
