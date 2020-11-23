@@ -1,106 +1,112 @@
 ### Exercício 1
-a. Este comando faz com que retiremos a coluna `salary` da tabela.
+a. Chave estrangeira é um tipo de chave que é utilizada para fazer relações entre tabelas.
 
-b. Altera o nome da coluna `gender` para `sex` e mantém seu limite máximo para até 6 caracteres.
+b. `CREATE TABLE Rating (`
+`id VARCHAR(255) PRIMARY KEY,`
+`comment TEXT NOT NULL,`
+`rate FLOAT NOT NULL,`
+`movie_id VARCHAR(255),`
+`FOREIGN KEY (movie_id) REFERENCES Movies(id)`
+`);`.
 
-c. Altera somente o limite de caracteres da coluna `gender`.
+`INSERT INTO Rating VALUES`
+`("1", "Filme maravilhoso demais", 9, "002"),`
+`("2", "Bem legal, duas pessoas e uma lagoa linda", 8,"004"),`
+`("3", "Confundiu minha cabeça, mas gostei muito!", 9.5, "001");`.
 
-d. `ALTER TABLE Actor CHANGE gender gender VARCHAR(100);`.
+c. Error Code: 1452. Cannot add or update a child row: a foreign key constraint fails (`jackson-gregory-mendes`.`Rating`, CONSTRAINT `Rating_ibfk_1` FOREIGN KEY (`movie_id`) REFERENCES `Movies` (`id`))
+Este erro aconteceu porque a restrição da chave estrangeira reconheceu que o id inserido é inexistente na tabela Movies.
+
+d. `ALTER TABLE Movies`
+`DROP COLUMN rating;`.
+
+e. Error Code: 1451. Cannot delete or update a parent row: a foreign key constraint fails (`jackson-gregory-mendes`.`Rating`, CONSTRAINT `Rating_ibfk_1` FOREIGN KEY (`movie_id`) REFERENCES `Movies` (`id`))
+Este erro ocorreu porque não podemos deletas algum elemento de um tabela sem deletar tudo que está relacionado a ele anteriormente.
 
 ### Exercício 2
-a. `UPDATE Actor`
-`SET name = "Caio Castro", birth_date = "1989-01-22"`
-`WHERE id = "003";`.
+a. Essa tabela relaciona filmes com atores e vice-versa, usando o ID de cada como condição de inserção.
 
-b. `UPDATE Actor`
-`SET name = "JULIANA PÃES"`
-`WHERE name = "Juliana Paes";`.
+b. `INSERT INTO MovieCast VALUES`
+`("001", "004"),`
+`("001", "001"),`
+`("002", "003"),`
+`("002", "007"),`
+`("004", "005"),`
+`("004", "001");`
 
-`UPDATE Actor`
-`SET name = "Juliana Paes"`
-`WHERE name = "JULIANA PÃES";`.
+c. Error Code: 1452. Cannot add or update a child row: a foreign key constraint fails (`jackson-gregory-mendes`.`MovieCast`, CONSTRAINT `MovieCast_ibfk_2` FOREIGN KEY (`actor_id`) REFERENCES `Actor` (`id`))
+Este erro ocorreu porque a restrição da chave estrangeira reconheceu que o id inserido é inexistente na tabela Movies.
+Aconteceria o mesmo erro se eu tivesse colocado um id inexistente vindo da tabela Actor.
 
-c. `UPDATE Actor`
-`SET`
-    `name = "Sônia Braga",`
-    `salary = 1000000,`
-    `birth_date = "1950-06-08",`
-    `gender = "female",`
-    `favorite_ice_cream_flavor = "flocos"`
-`WHERE id = "005";`.
-
-d. `UPDATE Actor`
-`SET name = "Justin Timberlake"`.
-`WHERE id = "1568785";`.
-
-Resultado: 0 row(s) affected Rows matched: 0  Changed: 0  Warnings: 0
-O resultado informa que nenhuma linha foi afetada porque, mesmo que a query funcione, não existe o id 1568785.
+d. Error Code: 1451. Cannot delete or update a parent row: a foreign key constraint fails (`jackson-gregory-mendes`.`MovieCast`, CONSTRAINT `MovieCast_ibfk_2` FOREIGN KEY (`actor_id`) REFERENCES `Actor` (`id`))
+Este erro ocorreu porque ainda existe relação do ator com a tabela MovieCast, então não é possível fazer a deleção sem antes apagar as relações que o ator possui.
 
 ### Exercício 3
-a. `DELETE FROM Actor WHERE name = "Fernanda Montenegro";`.
+a. A query faz com que vejamos os dados das duas tabelas, onde o operador ON executa uma condição para que essa junção de tabelas seja feita. No caso, o operador ON está pedindo para juntarmos as tabelas com a condição do id do filme na tabela Movies ser igual ao id do filme avaliado na tabela Rating.
 
-b. `DELETE FROM Actor WHERE gender = "male" AND salary > 1000000;`.
+b. `SELECT movie_id, name, rate FROM Movies`
+`INNER JOIN Rating`
+`ON Movies.id = Rating.movie_id;`.
 
 ### Exercício 4
-a. `SELECT MAX(salary) FROM Actor;`.
+a. `SELECT m.id, m.name, r.rate, r.comment FROM Movies m`
+`LEFT JOIN Rating r`
+`ON m.id = r.movie_id;`.
 
-b. `SELECT MIN(salary) FROM Actor WHERE gender = "female";`.
+b. `SELECT m.id as movie_id, m.name, ac.id as actor_id FROM Movies m`
+`RIGHT JOIN Actor ac`
+`ON ac.id = m.id;`.
 
-c. `SELECT COUNT(*) FROM Actor WHERE gender = "female";`.
+c.`SELECT m.id as movie_id, m.name, mc.actor_id FROM Movies m`
+`RIGHT JOIN MovieCast mc`
+`ON mc.movie_id = m.id;`.
 
-d. `SELECT SUM(salary) FROM Actor;`.
+d.`SELECT AVG(r.rate), m.id, m.name FROM Movies m`
+`LEFT JOIN Rating r`
+`ON m.id = r.movie_id`
+`GROUP BY (m.id);`
 
 ### Exercício 5
-a. Está query faz com que seja exibido todos os atores divididos por gênero e os agrupa em seus respectivos grupos (male e female).
+a. A query está reunindo as informações das tabelas Movies, MovieCast e Actor. Devemos usar dois comandos JOIN, porque devemos separar, por ordem, qual relação sera feita primeiro. Neste caso, primeiro juntamos os dados da tabela Movies com os dados da tabela MovieCast e depois, Actor com MovieCast.
 
-b. `SELECT id, name FROM Actor ORDER BY name DESC;`.
+b. `SELECT`
+	`m.id as movie_id,`
+    `m.name as movie_title,`
+    `a.id as actor_id,`
+    `a.name as actor_name`
+`FROM Movies m`
+`LEFT JOIN MovieCast mc ON m.id = mc.movie_id`
+`JOIN Actor a ON a.id = mc.actor_id;`
 
-c. `SELECT * FROM Actor ORDER BY salary ASC;`.
+c. Basicamente com o uso do ALIAS (comando AS) foi possível apelidar todos os campos, deixando mais legível a tabela resultante das relações feitas na query.
 
-d. `SELECT * FROM Actor ORDER BY salary DESC LIMIT 3;`.
-
-e. `SELECT AVG(salary), gender FROM Actor GROUP BY gender;`.
+d. `SELECT`
+	`m.name as movie_title,`
+    `a.name as actor_name,`
+   `r.rate as rating,`
+    `r.comment`
+`FROM Movies m`
+`LEFT JOIN MovieCast mc ON m.id = mc.movie_id`
+`JOIN Actor a ON a.id = mc.actor_id`
+`JOIN Rating r ON m.id = r.movie_id;`
 
 ### Exercício 6
-a. `ALTER TABLE Movies ADD playing_limit_date DATE;`.
+a. É uma relação N:M (muitos pra muitos), porque um filme pode ganhar vários Óscar assim como um Óscar pode ser dado para filmes diferentes.
 
-b. `ALTER TABLE Movies CHANGE rating rating FLOAT;`.
+b. `CREATE TABLE Oscar (`
+`oscar_name VARCHAR(255) DEFAULT "Sem Óscar",`
+`oscar_date DATE,`
+`movie_id VARCHAR(255),`
+`FOREIGN KEY (movie_id) REFERENCES Movies(id)`
+`);`
 
-c. `UPDATE Movies`
-`SET playing_limit_date = "2020-12-13"`
-`WHERE name = "Doce de mãe";`.
+c. `INSERT INTO Oscar VALUES`
+`("Melhor filme de comédia", "2018-08-12", "001"),`
+`("Melhor direção", "2018-08-12", "001"),`
+`("Melhor figurino", "2019-09-05", "002"),`
+`("Melhor trilha sonora", "2019-09-05", "002"),`
+`("Melhor filme", "2020-07-27", "004"),`
+`("Melhor fotografia", "2020-07-27", "004");`
 
-`UPDATE Movies`
-`SET playing_limit_date = "2020-09-7"`
-`WHERE name = "Lagoa Azul";`.
-
-d. `DELETE FROM Movies WHERE id = "003";`
-`UPDATE Movies`
-`SET synopsis = "Um filme bem legal"`
-`WHERE id = "003";`.
-Resultado: 0 row(s) affected Rows matched: 0  Changed: 0  Warnings: 0
-A query foi escrita corretamente, porém nenhuma linha foi afetada pela atualização porque o id não existe.
-
-### Exercício 7
-a. `SELECT COUNT(*)`
-`FROM Movies`
-`WHERE rating > 7.5;`.
-
-b. `SELECT AVG(rating) FROM Movies;`.
-
-c. `SELECT COUNT(*) FROM Movies WHERE playing_limit_date > CURDATE();`.
-
-d. `SELECT COUNT(*) FROM Movies WHERE release_date > CURDATE();`.
-
-e. `SELECT MAX(rating) FROM Movies;`.
-
-f. `SELECT MIN(rating) FROM Movies;`.
-
-### Exercício 8
-a. `SELECT * FROM Movies ORDER BY name ASC;`.
-
-b. `SELECT * FROM Movies ORDER BY name DESC LIMIT 5;`.
-
-c. `SELECT * FROM Movies WHERE release_date < CURDATE() ORDER BY release_date DESC LIMIT 3;`.
-
-d. `SELECT * FROM Movies WHERE rating ORDER BY rating DESC LIMIT 3;`.
+d.`SELECT m.name as movie_name, o.oscar_name, o.oscar_date FROM Movies m`
+`LEFT JOIN Oscar o ON m.id = o.movie_id;
